@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Shop｜ON Original Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site-nav.css" />
+    <style>
+      :root {
+        --p: #3f174d;
+        --b: #85103f;
+        --c: #fcfaf5;
+        --l: #ddd5d9;
+        --m: #655c62;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--c);
+        color: #251b23;
+        font-family: "Source Sans 3", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(1120px, calc(100% - 64px));
+        margin: auto;
+      }
+      .notice {
+        padding: 10px;
+        background: var(--p);
+        color: #fff;
+        text-align: center;
+        font: 500 0.69rem "DM Mono";
+      }
+      .notice b,
+      .eyebrow {
+        color: #dfcf68;
+      }
+      header {
+        height: 85px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        width: 122px;
+      }
+      .logo img {
+        width: 100%;
+        display: block;
+      }
+      nav {
+        display: flex;
+        gap: 23px;
+        align-items: center;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+      .lang {
+        border-bottom: 1px solid currentColor;
+        font: 0.7rem "DM Mono";
+      }
+      .back {
+        padding: 10px 16px;
+        border: 1px solid var(--p);
+        border-radius: 99px;
+      }
+      .hero {
+        padding: 88px 0 74px;
+        background: linear-gradient(124deg, #25102f, #611d55);
+        color: #fff;
+      }
+      .eyebrow {
+        font: 500 0.7rem "DM Mono";
+        letter-spacing: 0.12em;
+      }
+      .hero h1,
+      .heading h2,
+      .card h2 {
+        margin: 16px 0;
+        font:
+          600 clamp(2.8rem, 5.8vw, 5.6rem) / 1.1 "Source Serif 4",
+          serif;
+        letter-spacing: -0.04em;
+      }
+      .hero p {
+        max-width: 600px;
+        color: #ecdfeb;
+        line-height: 1.8;
+      }
+      .catalogue {
+        padding: 72px 0;
+      }
+      .heading h2 {
+        font-size: clamp(2.2rem, 4vw, 4rem);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+      .card {
+        overflow: hidden;
+        border: 1px solid var(--l);
+        border-radius: 21px;
+        background: #fff;
+      }
+      .media {
+        height: 240px;
+        background: #f1ebf1;
+        position: relative;
+        display: grid;
+        place-items: center;
+      }
+      .media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .media strong {
+        color: var(--p);
+        font: 600 4rem "Source Serif 4";
+      }
+      .tag {
+        position: absolute;
+        top: 14px;
+        left: 14px;
+        padding: 6px 9px;
+        background: #fff;
+        border-radius: 99px;
+        color: var(--p);
+        font: 0.65rem "DM Mono";
+      }
+      .copy {
+        padding: 24px;
+      }
+      .card h2 {
+        font-size: 2.45rem;
+      }
+      .card h2 span {
+        display: block;
+        margin-top: 8px;
+        font: 500 0.84rem "Source Sans 3";
+      }
+      .card p {
+        min-height: 54px;
+        color: var(--m);
+        line-height: 1.65;
+      }
+      .price {
+        margin: 17px 0;
+        color: var(--b);
+        font-size: 1.65rem;
+        font-weight: 700;
+      }
+      .tiers {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 7px;
+        margin: 16px 0;
+      }
+      .tiers div {
+        padding: 9px;
+        border-radius: 9px;
+        background: #f1ebf1;
+        font-size: 0.75rem;
+      }
+      .tiers b {
+        display: block;
+        color: var(--b);
+      }
+      .button {
+        display: inline-block;
+        padding: 12px 16px;
+        border: 1px solid var(--p);
+        border-radius: 99px;
+        color: var(--p);
+        font-weight: 700;
+      }
+      .note {
+        margin-top: 24px;
+        padding: 18px;
+        border-left: 3px solid #d7ad35;
+        background: #f7f0df;
+        color: #564b42;
+        line-height: 1.7;
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 28px 0;
+        border-top: 1px solid var(--l);
+        color: #7b7175;
+        font: 500 0.68rem "DM Mono";
+      }
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .card:last-child {
+          grid-column: span 2;
+        }
+      }
+      @media (max-width: 720px) {
+        .wrap {
+          width: min(100% - 52px, 1120px);
+        }
+        header {
+          height: 70px;
+        }
+        .logo {
+          width: 99px;
+        }
+        nav a:not(.back):not(.lang) {
+          display: none;
+        }
+        .hero {
+          padding: 60px 0;
+        }
+        .catalogue {
+          padding: 52px 0;
+        }
+        .grid {
+          grid-template-columns: 1fr;
+        }
+        .card:last-child {
+          grid-column: auto;
+        }
+        .media {
+          height: 225px;
+        }
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body data-page="shop">
+    <div class="notice"><b>ON ORIGINAL NUTRITION</b>　HONG KONG SHOP</div>
+    <header class="wrap">
+      <a class="logo" href="en.html"
+        ><img src="on-logo-transparent.png" alt="ON Original Nutrition"
+      /></a>
+      <nav>
+        <a href="en.html#products">Products</a
+        ><a href="en-quality.html">Certification</a
+        ><a href="en-contact.html">Contact</a
+        ><a class="lang" href="index.html">繁中</a
+        ><a class="back" href="en.html">Home ←</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="wrap">
+          <div class="eyebrow">ONLINE STORE / HONG KONG</div>
+          <h1>Choose your<br />daily formula.</h1>
+          <p>
+            Prices are shown in Hong Kong dollars. Please review local labels
+            and important notices before placing an order.
+          </p>
+        </div>
+      </section>
+      <section class="wrap catalogue">
+        <div class="eyebrow" style="color: #85103f">SHOP THE COLLECTION</div>
+        <div class="heading"><h2>Products &amp; prices.</h2></div>
+        <div class="grid">
+          <article class="card">
+            <div class="media">
+              <span class="tag">ON LIFE</span
+              ><img
+                src="life-natural-product.png"
+                alt="ON Life Signature Seed Oil"
+              />
+            </div>
+            <div class="copy">
+              <h2>life<span>Signature Seed Oil</span></h2>
+              <p>Select a box quantity; per-box savings are shown below.</p>
+              <div class="tiers">
+                <div><b>HK$788</b>1 box</div>
+                <div><b>HK$768 / box</b>6 boxes</div>
+                <div><b>HK$758 / box</b>12 boxes</div>
+                <div><b>HK$748 / box</b>24 boxes</div>
+              </div>
+              <a class="button" href="en-contact.html">Enquire to order</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media">
+              <span class="tag">ON FLOW</span
+              ><img src="flow-product.png" alt="ON Flow" />
+            </div>
+            <div class="copy">
+              <h2>flow<span>Daily vitality formula</span></h2>
+              <p>
+                Refer to the local label for ingredients and product details.
+              </p>
+              <div class="price">
+                HK$560
+                <small style="font-size: 0.78rem; color: #766a70"
+                  >per pack</small
+                >
+              </div>
+              <a class="button" href="en-contact.html">Enquire to order</a>
+            </div>
+          </article>
+          <article class="card">
+            <div class="media">
+              <span class="tag">ON CLEAR</span><strong>clear</strong>
+            </div>
+            <div class="copy">
+              <h2>Clear<span>Local label details to follow</span></h2>
+              <p>
+                Price is available; complete product material and packaging
+                image will follow.
+              </p>
+              <div class="price">
+                HK$360
+                <small style="font-size: 0.78rem; color: #766a70"
+                  >per box</small
+                >
+              </div>
+              <a class="button" href="en-contact.html">Enquire to order</a>
+            </div>
+          </article>
+        </div>
+        <div class="note">
+          <b>Important:</b> This is a product and price reference page. Online
+          payment, delivery calculation and order confirmation are not yet
+          connected. Please contact customer care for ordering arrangements.
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <span>© 2026 ON ORIGINAL NUTRITION</span
+      ><a href="en-contact.html">CONTACT</a
+      ><a href="en-legal.html">DISCLAIMER &amp; PRIVACY</a>
+    </footer>
+    <script src="site-nav.js"></script>
+  </body>
+</html>

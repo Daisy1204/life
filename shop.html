@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>網店｜ON Original Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+HK:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site-nav.css" />
+    <style>
+      :root {
+        --ink: #251b23;
+        --plum: #3f174d;
+        --berry: #85103f;
+        --cream: #fcfaf5;
+        --gold: #d7ad35;
+        --line: #ddd5d9;
+        --muted: #655c62;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Noto Sans HK", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(1170px, calc(100% - 48px));
+        margin: auto;
+      }
+      .notice {
+        padding: 10px;
+        text-align: center;
+        background: var(--plum);
+        color: #fff;
+        font: 500 0.69rem "DM Mono";
+        letter-spacing: 0.08em;
+      }
+      .notice b,
+      .eyebrow {
+        color: #dfcf68;
+      }
+      .eyebrow {
+        font: 500 0.7rem "DM Mono";
+        letter-spacing: 0.13em;
+      }
+      header {
+        height: 85px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        width: 122px;
+        line-height: 0;
+      }
+      .logo img {
+        display: block;
+        width: 100%;
+      }
+      nav {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      .lang {
+        border-bottom: 1px solid var(--ink);
+        padding-bottom: 3px;
+        font: 500 0.7rem "DM Mono";
+      }
+      .cart-button {
+        position: relative;
+        padding: 10px 17px;
+        border: 1px solid var(--plum);
+        border-radius: 99px;
+        background: #fff;
+        color: var(--plum);
+        font: 600 0.84rem "Noto Sans HK";
+        cursor: pointer;
+      }
+      .cart-count {
+        display: inline-grid;
+        place-items: center;
+        min-width: 18px;
+        height: 18px;
+        margin-left: 5px;
+        border-radius: 99px;
+        background: var(--berry);
+        color: #fff;
+        font: 0.63rem "DM Mono";
+      }
+      .hero {
+        padding: 72px 0 52px;
+        background: linear-gradient(120deg, #281033, #5b205c);
+        color: #fff;
+      }
+      .hero h1 {
+        margin: 14px 0;
+        font:
+          600 clamp(2.8rem, 5vw, 5.6rem) / 1.08 "Noto Serif TC",
+          serif;
+        letter-spacing: -0.045em;
+      }
+      .hero p {
+        max-width: 610px;
+        color: #eee4ed;
+        line-height: 1.8;
+      }
+      .hero-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(360px, 0.95fr);
+        gap: 42px;
+        align-items: center;
+      }
+      .hero-showcase {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin: 0;
+      }
+      .hero-shot {
+        min-height: 340px;
+        margin: 0;
+        overflow: hidden;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 20px;
+        background: #f4eef4;
+        box-shadow: 0 16px 40px rgba(9, 2, 14, 0.24);
+      }
+      .hero-shot img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: 340px;
+        object-fit: cover;
+      }
+      .hero-shot.life-shot img {
+        object-position: 52% 55%;
+      }
+      .hero-shot.flow-shot img {
+        object-position: 63% center;
+      }
+      .shop-note {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        margin-top: 30px;
+        background: rgba(255, 255, 255, 0.22);
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 15px;
+        overflow: hidden;
+      }
+      .shop-note div {
+        padding: 14px 17px;
+        background: rgba(32, 11, 41, 0.24);
+        font-size: 0.79rem;
+        line-height: 1.5;
+      }
+      .shop-note b {
+        display: block;
+        color: #dfcf68;
+        font: 0.65rem "DM Mono";
+        letter-spacing: 0.08em;
+      }
+      .catalogue {
+        padding: 76px 0;
+      }
+      .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 29px;
+      }
+      .heading h2 {
+        margin: 9px 0 0;
+        font:
+          600 clamp(2.2rem, 4vw, 4rem) / 1.1 "Noto Serif TC",
+          serif;
+        letter-spacing: -0.04em;
+      }
+      .heading p {
+        max-width: 365px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+      .products {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 17px;
+      }
+      .product {
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+      }
+      .product-media {
+        height: 230px;
+        background: #f1edf3;
+        position: relative;
+        overflow: hidden;
+      }
+      .product-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .flow .product-media img {
+        object-position: 68% center;
+      }
+      .life .product-media img {
+        object-position: center 65%;
+      }
+      .clear .product-media {
+        display: grid;
+        place-items: center;
+        background:
+          radial-gradient(circle at 70% 28%, #eee1e8, transparent 25%),
+          linear-gradient(145deg, #ede7ef, #fdfbf7);
+      }
+      .clear .product-media:after {
+        content: "";
+        position: absolute;
+        width: 160px;
+        height: 160px;
+        border: 1px solid #d0c1d0;
+        border-radius: 50%;
+        box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.4);
+      }
+      .clear .product-media strong {
+        position: relative;
+        z-index: 1;
+        color: var(--plum);
+        font: 600 3.2rem "Noto Serif TC";
+        letter-spacing: -0.08em;
+      }
+      .tag {
+        position: absolute;
+        z-index: 1;
+        top: 15px;
+        left: 15px;
+        padding: 6px 9px;
+        border-radius: 99px;
+        background: #fff;
+        color: var(--plum);
+        font: 0.63rem "DM Mono";
+        letter-spacing: 0.07em;
+      }
+      .product-body {
+        padding: 23px;
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+      }
+      .product h3 {
+        margin: 0;
+        color: var(--plum);
+        font: 600 2rem/1 "Noto Serif TC";
+      }
+      .product h3 span {
+        display: block;
+        margin-top: 9px;
+        color: #6e626b;
+        font: 500 0.84rem "Noto Sans HK";
+        letter-spacing: 0.02em;
+      }
+      .product p {
+        min-height: 48px;
+        margin: 15px 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.65;
+      }
+      .price {
+        margin-top: auto;
+        padding: 14px 0;
+        border-top: 1px solid var(--line);
+      }
+      .price strong {
+        display: block;
+        color: var(--berry);
+        font-size: 1.35rem;
+      }
+      .price small {
+        display: block;
+        margin-top: 3px;
+        color: #81767c;
+        font-size: 0.72rem;
+      }
+      .tier-select {
+        width: 100%;
+        margin: 13px 0 9px;
+        padding: 11px;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        background: #fff;
+        color: var(--ink);
+        font: 500 0.82rem "Noto Sans HK";
+      }
+      .add {
+        width: 100%;
+        padding: 13px;
+        border: 0;
+        border-radius: 99px;
+        background: var(--plum);
+        color: #fff;
+        font: 600 0.88rem "Noto Sans HK";
+        cursor: pointer;
+      }
+      .add:hover {
+        background: var(--berry);
+      }
+      .notice-box {
+        margin-top: 18px;
+        padding: 17px 19px;
+        background: #f5efe4;
+        border-left: 3px solid var(--gold);
+        color: #5c5153;
+        font-size: 0.8rem;
+        line-height: 1.7;
+      }
+      .notice-box b {
+        color: var(--berry);
+      }
+      .cart-panel {
+        position: fixed;
+        z-index: 100;
+        right: 18px;
+        top: 18px;
+        width: min(390px, calc(100vw - 36px));
+        padding: 22px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: #fff;
+        box-shadow: 0 20px 55px rgba(40, 13, 43, 0.24);
+        transform: translateY(-130%);
+        opacity: 0;
+        pointer-events: none;
+        transition: 0.25s;
+      }
+      .cart-panel.open {
+        transform: none;
+        opacity: 1;
+        pointer-events: auto;
+      }
+      .cart-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .cart-top h2 {
+        margin: 0;
+        font: 600 1.6rem "Noto Serif TC";
+      }
+      .close {
+        border: 0;
+        background: transparent;
+        color: var(--plum);
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+      .cart-items {
+        min-height: 65px;
+        margin: 15px 0;
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+      }
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        padding: 12px 0;
+        font-size: 0.84rem;
+      }
+      .cart-item small {
+        display: block;
+        color: #81767c;
+        margin-top: 3px;
+      }
+      .cart-total {
+        display: flex;
+        justify-content: space-between;
+        margin: 15px 0;
+        color: var(--plum);
+        font-size: 1.08rem;
+        font-weight: 700;
+      }
+      .checkout {
+        width: 100%;
+        padding: 13px;
+        border: 0;
+        border-radius: 99px;
+        background: #d9d2d7;
+        color: #70666d;
+        font: 600 0.85rem "Noto Sans HK";
+      }
+      .checkout-note {
+        margin: 11px 0 0;
+        color: #81767c;
+        font-size: 0.72rem;
+        line-height: 1.55;
+      }
+      .disclaimer {
+        padding: 22px 0;
+        background: #eee9e1;
+        color: #514a48;
+        font-size: 0.75rem;
+        line-height: 1.75;
+      }
+      .disclaimer b {
+        color: var(--berry);
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 29px 0;
+        color: #7b7175;
+        font: 500 0.68rem "DM Mono";
+      }
+      @media (max-width: 850px) {
+        .products {
+          grid-template-columns: 1fr 1fr;
+        }
+        .clear {
+          grid-column: span 2;
+        }
+      }
+      @media (max-width: 720px) {
+        .wrap {
+          width: min(100% - 52px, 1170px);
+        }
+        header {
+          height: 70px;
+        }
+        .logo {
+          width: 99px;
+        }
+        nav a:not(.lang) {
+          display: none;
+        }
+        .hero {
+          padding: 58px 0;
+        }
+        .hero-grid {
+          grid-template-columns: 1fr;
+          gap: 26px;
+        }
+        .hero-shot,
+        .hero-shot img {
+          min-height: 190px;
+        }
+        .shop-note {
+          grid-template-columns: 1fr;
+        }
+        .heading {
+          display: block;
+        }
+        .heading p {
+          margin-top: 17px;
+        }
+        .catalogue {
+          padding: 60px 0;
+        }
+        .products {
+          grid-template-columns: 1fr;
+        }
+        .clear {
+          grid-column: auto;
+        }
+        .product-media {
+          height: 245px;
+        }
+      }
+    </style>
+    <style>
+      .quantity {
+        display: inline-flex;
+        align-items: center;
+        gap: 13px;
+        margin: 12px 0 3px;
+        padding: 6px;
+        border: 1px solid var(--line);
+        border-radius: 99px;
+        background: #fff;
+      }
+      .quantity button,
+      .cart-adjust button {
+        width: 30px;
+        height: 30px;
+        border: 0;
+        border-radius: 50%;
+        background: #f1ebf1;
+        color: var(--plum);
+        font-size: 1.15rem;
+        line-height: 1;
+        cursor: pointer;
+      }
+      .quantity button:hover,
+      .cart-adjust button:hover {
+        background: var(--plum);
+        color: #fff;
+      }
+      .quantity output {
+        min-width: 18px;
+        color: var(--plum);
+        font-weight: 700;
+        text-align: center;
+      }
+      .cart-item {
+        gap: 10px;
+      }
+      .cart-adjust {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 8px;
+      }
+      .cart-adjust button {
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+      }
+      .cart-adjust span {
+        min-width: 16px;
+        text-align: center;
+        color: var(--plum);
+        font-weight: 700;
+      }
+      .cart-remove {
+        margin-left: auto;
+        border: 0;
+        background: none;
+        color: var(--berry);
+        font-size: 0.72rem;
+        cursor: pointer;
+        text-decoration: underline;
+      }
+      .cart-item > div {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body data-page="shop">
+    <div class="notice"><b>ON ORIGINAL NUTRITION</b>　香港網店</div>
+    <header class="wrap">
+      <a class="logo" href="index.html"
+        ><img src="on-logo-transparent.png" alt="ON Original Nutrition"
+      /></a>
+      <nav>
+        <a href="index.html#products">產品系列</a
+        ><a href="ingredients.html">成分研究</a><a href="quality.html">認證</a
+        ><a href="member.html">會員</a><a class="lang" href="en.html">EN</a
+        ><button class="cart-button" type="button" data-open-cart>
+          購物袋<span class="cart-count">0</span>
+        </button>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="wrap hero-grid">
+          <div>
+            <div class="eyebrow">ONLINE STORE / HONG KONG</div>
+            <h1>選擇你的<br />日常配方。</h1>
+            <p>
+              商品頁清楚列出單價與數量優惠；先加入購物袋，稍後可接入你選定的香港付款與送貨服務。
+            </p>
+            <div class="shop-note">
+              <div><b>價格顯示</b>所有價格以港幣計算</div>
+              <div><b>數量優惠</b>Life 可按所選盒數享每盒優惠</div>
+              <div><b>購買前提示</b>請先閱讀產品標籤與重要注意事項</div>
+            </div>
+          </div>
+          <figure
+            class="hero-showcase"
+            aria-label="ON Life 及 ON Flow 產品主視覺"
+          >
+            <div class="hero-shot life-shot">
+              <img
+                src="life-natural-product.png"
+                alt="ON Life 皇牌種籽油包裝"
+              />
+            </div>
+            <div class="hero-shot flow-shot">
+              <img src="flow-product.png" alt="ON Flow 日常活力配方包裝" />
+            </div>
+          </figure>
+        </div>
+      </section>
+      <section class="wrap catalogue">
+        <div class="heading">
+          <div>
+            <div class="eyebrow" style="color: #85103f">
+              SHOP THE COLLECTION
+            </div>
+            <h2>產品與價格。</h2>
+          </div>
+          <p>
+            參考成熟補充品網店的做法：先講清楚規格、每盒單價與數量，再讓客人加入購物袋。
+          </p>
+        </div>
+        <div class="products">
+          <article class="product life">
+            <div class="product-media">
+              <span class="tag">ON LIFE</span
+              ><img src="life-natural-product.png" alt="ON Life 皇牌種籽油" />
+            </div>
+            <div class="product-body">
+              <h3>life<span>皇牌種籽油</span></h3>
+              <p>按「−／＋」選擇盒數；每盒價格會按數量優惠自動計算。</p>
+              <div class="price">
+                <strong data-life-price>HK$788</strong
+                ><small data-life-summary>單盒</small>
+              </div>
+              <div
+                class="quantity"
+                data-quantity-control
+                data-life-quantity="1"
+                aria-label="選擇 Life 盒數"
+              >
+                <button
+                  type="button"
+                  data-quantity-change="-1"
+                  aria-label="減少 Life 數量"
+                >
+                  −</button
+                ><output data-quantity-value>1</output
+                ><button
+                  type="button"
+                  data-quantity-change="1"
+                  aria-label="增加 Life 數量"
+                >
+                  ＋
+                </button>
+              </div>
+              <button class="add" data-life-add type="button">
+                加入購物袋
+              </button>
+            </div>
+          </article>
+          <article class="product flow">
+            <div class="product-media">
+              <span class="tag">ON FLOW</span
+              ><img src="flow-product.png" alt="ON Flow" />
+            </div>
+            <div class="product-body">
+              <h3>flow<span>日常活力配方</span></h3>
+              <p>以產品包裝及本地標籤資料為準。</p>
+              <div class="price">
+                <strong>HK$560</strong><small>每包</small>
+              </div>
+              <div
+                class="quantity"
+                data-quantity-control
+                data-quantity="1"
+                aria-label="選擇 Flow 數量"
+              >
+                <button
+                  type="button"
+                  data-quantity-change="-1"
+                  aria-label="減少 Flow 數量"
+                >
+                  −</button
+                ><output data-quantity-value>1</output
+                ><button
+                  type="button"
+                  data-quantity-change="1"
+                  aria-label="增加 Flow 數量"
+                >
+                  ＋
+                </button>
+              </div>
+              <button
+                class="add"
+                data-product="Flow"
+                data-price="560"
+                type="button"
+              >
+                加入購物袋
+              </button>
+            </div>
+          </article>
+          <article class="product clear">
+            <div class="product-media">
+              <span class="tag">ON CLEAR</span><strong>clear</strong>
+            </div>
+            <div class="product-body">
+              <h3>Clear<span>產品資料將以本地標籤為準</span></h3>
+              <p>目前提供價格資料；完整產品資料及包裝圖片可於日後補上。</p>
+              <div class="price">
+                <strong>HK$360</strong><small>每盒</small>
+              </div>
+              <div
+                class="quantity"
+                data-quantity-control
+                data-quantity="1"
+                aria-label="選擇 Clear 數量"
+              >
+                <button
+                  type="button"
+                  data-quantity-change="-1"
+                  aria-label="減少 Clear 數量"
+                >
+                  −</button
+                ><output data-quantity-value>1</output
+                ><button
+                  type="button"
+                  data-quantity-change="1"
+                  aria-label="增加 Clear 數量"
+                >
+                  ＋
+                </button>
+              </div>
+              <button
+                class="add"
+                data-product="Clear"
+                data-price="360"
+                type="button"
+              >
+                加入購物袋
+              </button>
+            </div>
+          </article>
+        </div>
+        <div class="notice-box">
+          <b>重要提示：</b
+          >本頁現為商品與購物袋介面。付款、送貨費與訂單確認尚未接駁；啟用正式收款前，請先確定付款服務、退換政策、送貨安排及私隱政策。
+        </div>
+      </section>
+    </main>
+    <section class="disclaimer">
+      <div class="wrap">
+        <b>健康提示：</b
+        >本產品為日常保健食品，並不供作診斷、治療或預防任何疾病之用。請以香港本地標籤及專業人士意見為準。
+      </div>
+    </section>
+    <footer class="wrap">
+      <span>© 2026 ON ORIGINAL NUTRITION</span
+      ><span
+        ><a href="contact.html">聯絡我們</a>　·　<a href="legal.html#returns"
+          >退貨條款</a
+        >　·　<a href="legal.html">免責聲明及個人資料收集聲明</a></span
+      >
+    </footer>
+    <aside class="cart-panel" aria-label="購物袋">
+      <div class="cart-top">
+        <h2>購物袋</h2>
+        <button class="close" type="button" data-close-cart>×</button>
+      </div>
+      <div class="cart-items" data-cart-items>
+        <div class="cart-item">購物袋暫時未有商品。</div>
+      </div>
+      <div class="cart-total">
+        <span>小計</span><span data-cart-total>HK$0</span>
+      </div>
+      <button class="checkout" disabled>付款服務尚未設定</button>
+      <p class="checkout-note">
+        加入購物袋功能已可使用；下一步可接駁 Stripe、Shopify
+        或指定香港付款方式。
+      </p>
+    </aside>
+    <script src="shop.js"></script>
+    <script src="site-nav.js"></script>
+  </body>
+</html>

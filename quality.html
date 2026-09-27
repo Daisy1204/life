@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="ON Original Nutrition 認證與品質資料中心｜以清楚、可核對的方式說明製造與檢測資訊。"
+    />
+    <title>認證與品質｜ON Original Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+HK:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site-nav.css" />
+    <style>
+      :root {
+        --ink: #251b23;
+        --plum: #3f174d;
+        --berry: #85103f;
+        --cream: #fcfaf5;
+        --gold: #d7ad35;
+        --line: #ddd5d9;
+        --muted: #655c62;
+        --soft: #f1ebf1;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Noto Sans HK", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(1170px, calc(100% - 48px));
+        margin: auto;
+      }
+      .notice {
+        padding: 10px;
+        text-align: center;
+        background: var(--plum);
+        color: #fff;
+        font: 500 0.69rem "DM Mono";
+        letter-spacing: 0.08em;
+      }
+      .notice b {
+        color: #dfcf68;
+      }
+      header {
+        height: 85px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        display: block;
+        width: 122px;
+        line-height: 0;
+      }
+      .logo img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      nav {
+        display: flex;
+        gap: 23px;
+        align-items: center;
+        font-size: 0.85rem;
+        font-weight: 600;
+      }
+      nav a:hover {
+        color: var(--berry);
+      }
+      .back {
+        padding: 10px 16px;
+        border: 1px solid var(--plum);
+        border-radius: 99px;
+      }
+      .lang {
+        border-bottom: 1px solid var(--ink);
+        padding-bottom: 3px;
+        font: 500 0.7rem "DM Mono";
+      }
+      .hero {
+        position: relative;
+        overflow: hidden;
+        padding: 92px 0 86px;
+        background: linear-gradient(120deg, #24102f, #4e1b55);
+        color: #fff;
+      }
+      .hero:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at 78% 45%,
+            rgba(215, 173, 53, 0.25),
+            transparent 24%
+          ),
+          radial-gradient(
+            circle at 84% 72%,
+            rgba(199, 142, 204, 0.23),
+            transparent 30%
+          );
+      }
+      .hero .wrap {
+        position: relative;
+      }
+      .eyebrow {
+        color: var(--gold);
+        font: 500 0.7rem "DM Mono";
+        letter-spacing: 0.13em;
+      }
+      .hero h1,
+      .heading h2,
+      .evidence h2,
+      .sources h2 {
+        margin: 15px 0;
+        font:
+          600 clamp(3rem, 6vw, 6.1rem) / 1.08 "Noto Serif TC",
+          serif;
+        letter-spacing: -0.04em;
+      }
+      .hero p {
+        max-width: 680px;
+        color: #eee4ed;
+        line-height: 1.8;
+        font-size: 1rem;
+      }
+      .hero-tag {
+        display: inline-flex;
+        margin-top: 18px;
+        padding: 9px 13px;
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 99px;
+        color: #f5ecf4;
+        font-size: 0.8rem;
+      }
+      .intro {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 55px;
+        padding: 78px 0 38px;
+      }
+      .intro h2 {
+        margin: 10px 0 0;
+        font:
+          600 clamp(2.2rem, 4vw, 4rem) / 1.15 "Noto Serif TC",
+          serif;
+        letter-spacing: -0.04em;
+      }
+      .intro p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.8;
+      }
+      .note {
+        margin-top: 19px;
+        padding: 18px 19px;
+        border-left: 3px solid var(--gold);
+        background: #f5efe4;
+        color: #554c51;
+        font-size: 0.88rem;
+        line-height: 1.7;
+      }
+      .note b {
+        color: var(--berry);
+      }
+      .standards {
+        padding: 13px 0 86px;
+      }
+      .standard-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+      }
+      .standard {
+        position: relative;
+        min-height: 254px;
+        padding: 27px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: #fff;
+      }
+      .standard-number {
+        display: block;
+        color: var(--berry);
+        font: 500 0.7rem "DM Mono";
+        letter-spacing: 0.1em;
+      }
+      .status {
+        position: absolute;
+        right: 22px;
+        top: 24px;
+        padding: 6px 9px;
+        border-radius: 99px;
+        background: #f5efe4;
+        color: #765f23;
+        font: 500 0.61rem "DM Mono";
+        letter-spacing: 0.05em;
+      }
+      .standard h3 {
+        margin: 28px 0 10px;
+        font-size: 1.35rem;
+      }
+      .standard p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.75;
+      }
+      .standard small {
+        display: block;
+        margin-top: 17px;
+        color: #8a7f84;
+        font-size: 0.75rem;
+        line-height: 1.55;
+      }
+      .standard.safe {
+        background: #f9f5f9;
+      }
+      .standard.alert {
+        border-color: #d8be55;
+        background: #fffdf8;
+      }
+      .evidence {
+        padding: 76px 0;
+        background: var(--soft);
+      }
+      .evidence-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        gap: 35px;
+      }
+      .evidence h2 {
+        font-size: clamp(2.2rem, 4vw, 4rem);
+      }
+      .evidence-head p {
+        max-width: 395px;
+        color: var(--muted);
+        font-size: 0.91rem;
+        line-height: 1.7;
+      }
+      .evidence-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+        margin-top: 30px;
+      }
+      .evidence-card {
+        padding: 23px;
+        background: #fff;
+        border-radius: 18px;
+      }
+      .evidence-card b {
+        color: var(--berry);
+        font: 500 0.68rem "DM Mono";
+        letter-spacing: 0.08em;
+      }
+      .evidence-card h3 {
+        margin: 15px 0 10px;
+        font-size: 1.05rem;
+      }
+      .evidence-card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.86rem;
+        line-height: 1.7;
+      }
+      .sources {
+        padding: 78px 0;
+      }
+      .sources h2 {
+        font-size: clamp(2.15rem, 4vw, 3.8rem);
+      }
+      .source-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-top: 25px;
+      }
+      .source {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        align-items: center;
+        padding: 18px;
+        border-top: 1px solid var(--ink);
+        font-size: 0.91rem;
+        font-weight: 600;
+      }
+      .source span {
+        color: var(--berry);
+        font: 500 0.68rem "DM Mono";
+        white-space: nowrap;
+      }
+      .source:hover {
+        color: var(--berry);
+      }
+      .disclaimer {
+        padding: 22px 0;
+        background: #eee9e1;
+        color: #514a48;
+        font-size: 0.75rem;
+        line-height: 1.75;
+      }
+      .disclaimer b {
+        color: var(--berry);
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        padding: 29px 0;
+        color: #7b7175;
+        font: 500 0.68rem "DM Mono";
+        letter-spacing: 0.035em;
+      }
+      @media (max-width: 720px) {
+        .wrap {
+          width: min(100% - 32px, 1170px);
+        }
+        header {
+          height: 70px;
+        }
+        .logo {
+          width: 99px;
+        }
+        nav a:not(.back):not(.lang) {
+          display: none;
+        }
+        .hero {
+          padding: 65px 0 62px;
+        }
+        .intro,
+        .evidence-head {
+          display: block;
+          padding: 56px 0 26px;
+        }
+        .intro > div + div {
+          margin-top: 20px;
+        }
+        .standard-grid,
+        .evidence-grid,
+        .source-list {
+          grid-template-columns: 1fr;
+        }
+        .standards {
+          padding-bottom: 64px;
+        }
+        .standard {
+          min-height: 0;
+        }
+        .evidence {
+          padding: 60px 0;
+        }
+        .evidence-head p {
+          margin-top: 18px;
+        }
+        .sources {
+          padding: 60px 0;
+        }
+        footer {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+    </style>
+    <style>
+      .label-visual {
+        margin: 22px 0 0;
+        overflow: hidden;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: #fff;
+      }
+      .label-visual img {
+        display: block;
+        width: 100%;
+        height: 214px;
+        object-fit: cover;
+        object-position: 48% 37%;
+      }
+      .label-visual figcaption {
+        padding: 10px 13px;
+        color: #675f63;
+        font-size: 0.72rem;
+        line-height: 1.5;
+      }
+    </style>
+    <style>
+      @media (max-width: 720px) {
+        .wrap {
+          width: min(100% - 52px, 1170px) !important;
+        }
+      }
+    </style>
+  </head>
+  <body data-page="quality">
+    <div class="notice"><b>ON ORIGINAL NUTRITION</b>　認證與品質資料中心</div>
+    <header class="wrap">
+      <a class="logo" href="index.html"
+        ><img src="on-logo-transparent.png" alt="ON Original Nutrition"
+      /></a>
+      <nav>
+        <a href="index.html#products">產品系列</a
+        ><a href="ingredients.html">成分研究</a><a href="#standards">認證</a
+        ><a class="lang" href="en.html">EN</a
+        ><a class="back" href="index.html">返回首頁　←</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="wrap">
+          <div class="eyebrow">QUALITY &amp; COMPLIANCE</div>
+          <h1>品質，要有<br />資料說話。</h1>
+          <p>
+            我們以可核對的資料說明製造與檢測資訊：甚麼是標準、甚麼是獨立驗證，以及甚麼內容需要供應商文件確認。這比單靠一個徽章更清楚。
+          </p>
+          <span class="hero-tag">只使用與證明範圍相符的說法</span>
+        </div>
+      </section>
+      <section class="wrap intro">
+        <div>
+          <div class="eyebrow" style="color: #85103f">
+            HOW TO READ QUALITY MARKS
+          </div>
+          <h2>看見圖示，<br />先看它真正代表甚麼。</h2>
+        </div>
+        <div>
+          <p>
+            參考大型營養補充品牌的資訊方式，我們把「標示」與「可驗證的證據」分開：認證要列出發證機構、適用範圍與有效日期；獨立測試要講明實際測項與批號。
+          </p>
+          <div class="note">
+            <b>重要原則：</b>現時包裝圖片列有 GMP、第三方測試、自然配方及 FDA
+            設施相關圖示；在未收到有效證書或報告前，本頁不把它們描述為已獨立核實的產品認證。
+          </div>
+          <figure class="label-visual">
+            <img
+              src="life-label.jpeg"
+              alt="ON Life 實際包裝的成分、食用方法及營養標示"
+            />
+            <figcaption>
+              包裝標示預覽：購買與食用時請以香港本地實物標籤為準。
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="wrap standards" id="standards">
+        <div class="standard-grid">
+          <article class="standard">
+            <span class="standard-number">01 / GMP</span
+            ><span class="status">待文件核對</span>
+            <h3>良好生產規範</h3>
+            <p>
+              GMP
+              是一套製造與品質管理要求，涵蓋原料、衛生、程序控制、記錄及放行等環節。它說明的是製造制度，不等同每一批產品都已獲某機構認證。
+            </p>
+            <small
+              >應公開：證書頒發機構、設施地址、適用產品類別、標準版本及有效日期。</small
+            >
+          </article>
+          <article class="standard">
+            <span class="standard-number">02 / 3RD PARTY TESTING</span
+            ><span class="status">待文件核對</span>
+            <h3>獨立第三方測試</h3>
+            <p>
+              真正有意義的第三方測試，應由與品牌獨立的實驗室按既定方法進行。圖示本身不說明測了甚麼，亦不等同測試了所有批次。
+            </p>
+            <small
+              >應公開：實驗室名稱、批號、測試日期、方法及項目，例如成分鑑別、微生物或重金屬。</small
+            >
+          </article>
+          <article class="standard safe">
+            <span class="standard-number">03 / NATURE MADE</span
+            ><span class="status">配方描述</span>
+            <h3>自然靈感配方</h3>
+            <p>
+              「自然配方」或「自然靈感」是配方概念，不是一張認證。它不自動表示有機、非基因改造、100%
+              天然，或不含任何其他成分。
+            </p>
+            <small
+              >應以實際包裝上的完整成分表，以及任何可核對的特定認證作準。</small
+            >
+          </article>
+          <article class="standard alert">
+            <span class="standard-number">04 / FDA WORDING</span
+            ><span class="status">用語已修正</span>
+            <h3>不使用「FDA 認證設施」</h3>
+            <p>
+              FDA 不會核准膳食補充品，也不會為其製造商或設施發出 GMP
+              合規認證。即使設施需要向 FDA 登記，登記也不代表 FDA
+              核准、認證或推薦產品。
+            </p>
+            <small
+              >如供應商能提供登記資料，只可在證據範圍內使用「FDA
+              已登記設施」等準確用語，並附上必要說明。</small
+            >
+          </article>
+        </div>
+      </section>
+      <section class="evidence">
+        <div class="wrap">
+          <div class="evidence-head">
+            <div>
+              <div class="eyebrow" style="color: #85103f">
+                THE EVIDENCE WE ASK FOR
+              </div>
+              <h2>不只展示徽章，<br />也交代依據。</h2>
+            </div>
+            <p>
+              以下是我們建議向供應商或製造商索取的資料。取得後，才可把相應的認證標示提升為「已核對」狀態。
+            </p>
+          </div>
+          <div class="evidence-grid">
+            <article class="evidence-card">
+              <b>A / 製造</b>
+              <h3>有效 GMP 證書</h3>
+              <p>
+                核對發證機構、設施名稱與地址、認證標準、適用範圍、簽發與到期日；不要只使用沒有來源的
+                GMP 圖示。
+              </p>
+            </article>
+            <article class="evidence-card">
+              <b>B / 測試</b>
+              <h3>批次分析報告</h3>
+              <p>
+                核對產品批號、測試實驗室、採用方法、測試項目、規格與結果。若只提供宣傳語，不應稱為產品已驗證。
+              </p>
+            </article>
+            <article class="evidence-card">
+              <b>C / 標籤</b>
+              <h3>香港發售版本資料</h3>
+              <p>
+                確認本地成分表、食用方法、警語及聲稱與實物一致；補充品不應作診斷、治療或預防疾病的宣稱。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="wrap sources">
+        <div class="eyebrow" style="color: #85103f">
+          READING &amp; REFERENCE
+        </div>
+        <h2>認證說法的<br />官方參考資料。</h2>
+        <div class="source-list">
+          <a
+            class="source"
+            href="https://www.fda.gov/food/information-consumers-using-dietary-supplements/questions-and-answers-dietary-supplements"
+            target="_blank"
+            rel="noreferrer"
+            ><span>FDA</span>
+            <div>膳食補充品問答：監管、GMP 與製造設施登記 ↗</div></a
+          ><a
+            class="source"
+            href="https://www.fda.gov/consumers/consumer-updates/it-really-fda-approved"
+            target="_blank"
+            rel="noreferrer"
+            ><span>FDA</span>
+            <div>「FDA approved」的正確含義 ↗</div></a
+          ><a
+            class="source"
+            href="https://www.fda.gov/food/guidance-regulation-food-and-dietary-supplements/current-good-manufacturing-practices-cgmps-food-and-dietary-supplements"
+            target="_blank"
+            rel="noreferrer"
+            ><span>FDA</span>
+            <div>膳食補充品的 CGMP：21 CFR Part 111 ↗</div></a
+          ><a
+            class="source"
+            href="https://www.nsf.org/knowledge-library/what-is-third-party-certification"
+            target="_blank"
+            rel="noreferrer"
+            ><span>NSF</span>
+            <div>何謂獨立第三方認證與其涵蓋範圍 ↗</div></a
+          >
+        </div>
+      </section>
+    </main>
+    <section class="disclaimer">
+      <div class="wrap">
+        <b>重要提示：</b
+        >本頁為品質資訊閱讀指引，並非產品功效或醫療聲稱。所有具體認證、測試與製造資料均應以有效、可核對的原始文件及香港本地產品標籤為準。
+      </div>
+    </section>
+    <footer class="wrap">
+      <span>© 2026 ON ORIGINAL NUTRITION</span
+      ><span
+        ><a href="contact.html">聯絡我們</a>　·　<a href="legal.html"
+          >免責聲明及個人資料收集聲明</a
+        ></span
+      ><a href="#top">返回頁頂 ↑</a>
+    </footer>
+    <script src="site-nav.js"></script>
+  </body>
+</html>

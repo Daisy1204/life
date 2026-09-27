@@ -1,0 +1,633 @@
+<!doctype html>
+<html lang="zh-Hant-HK">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="ON Life 核心成分研究｜以產品標籤及公開科學資料整理。"
+    />
+    <title>Life 成分研究｜ON Original Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+HK:wght@400;500;600;700&family=Noto+Serif+TC:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site-nav.css" />
+    <style>
+      :root {
+        --plum: #3f174d;
+        --berry: #85103f;
+        --cream: #fcfaf5;
+        --gold: #dfcf68;
+        --line: #ddd5d9;
+        --muted: #665e63;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: #251b23;
+        font-family: "Noto Sans HK", sans-serif;
+      }
+      .wrap {
+        width: min(1170px, calc(100% - 48px));
+        margin: auto;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .notice {
+        padding: 10px;
+        text-align: center;
+        background: var(--plum);
+        color: #fff;
+        font: 500 0.69rem "DM Mono";
+        letter-spacing: 0.08em;
+      }
+      .notice b {
+        color: var(--gold);
+      }
+      header {
+        height: 85px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        width: 122px;
+        line-height: 0;
+      }
+      .logo img {
+        display: block;
+        width: 100%;
+      }
+      nav {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        font-size: 0.86rem;
+        font-weight: 600;
+      }
+      .back {
+        padding: 10px 15px;
+        border: 1px solid var(--plum);
+        border-radius: 99px;
+      }
+      .hero {
+        padding: 81px 0 64px;
+        background: linear-gradient(125deg, #2a1234, #5d1a55);
+        color: #fff;
+        overflow: hidden;
+        position: relative;
+      }
+      .hero:after {
+        content: "";
+        position: absolute;
+        right: -7%;
+        top: -55%;
+        width: 57%;
+        aspect-ratio: 1;
+        border: 1px solid rgba(223, 207, 104, 0.45);
+        border-radius: 50%;
+        box-shadow:
+          0 0 0 55px rgba(223, 207, 104, 0.06),
+          0 0 0 110px rgba(223, 207, 104, 0.04);
+      }
+      .hero .wrap {
+        position: relative;
+        z-index: 1;
+      }
+      .eyebrow {
+        color: var(--gold);
+        font: 500 0.72rem "DM Mono";
+        letter-spacing: 0.13em;
+      }
+      .hero h1 {
+        max-width: 780px;
+        margin: 15px 0 17px;
+        font:
+          500 clamp(3.3rem, 6vw, 6.5rem) / 0.96 "Playfair Display",
+          serif;
+        letter-spacing: -0.075em;
+      }
+      .hero p {
+        max-width: 580px;
+        color: #f0dfe9;
+        line-height: 1.8;
+      }
+      .intro {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 56px;
+        padding: 73px 0 38px;
+      }
+      .intro h2 {
+        margin: 9px 0 0;
+        font:
+          500 clamp(2.2rem, 4vw, 4rem) / 1 "Playfair Display",
+          serif;
+        letter-spacing: -0.06em;
+      }
+      .intro p {
+        color: var(--muted);
+        line-height: 1.75;
+      }
+      .fact {
+        padding: 19px;
+        border-radius: 15px;
+        background: #f2ebf3;
+        border-left: 3px solid var(--berry);
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+      .fact b {
+        color: var(--berry);
+      }
+      .ingredients {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        padding: 19px 0 88px;
+      }
+      .ingredient {
+        min-height: 302px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 18px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+      }
+      .number {
+        color: var(--berry);
+        font: 500 0.68rem "DM Mono";
+        letter-spacing: 0.09em;
+      }
+      .ingredient h3 {
+        margin: 33px 0 6px;
+        font-size: 1.12rem;
+        line-height: 1.2;
+      }
+      .latin {
+        color: #54702e;
+        font: italic 0.74rem "DM Mono";
+      }
+      .ingredient p {
+        margin: 20px 0 0;
+        color: var(--muted);
+        font-size: 0.8rem;
+        line-height: 1.65;
+      }
+      .ingredient a {
+        margin-top: auto;
+        color: var(--berry);
+        font: 500 0.72rem "DM Mono";
+        border-bottom: 1px solid currentColor;
+        align-self: start;
+        padding-bottom: 3px;
+      }
+      .label {
+        padding: 76px 0;
+        background: #f1ecf4;
+      }
+      .label-grid {
+        display: grid;
+        grid-template-columns: 290px 1fr;
+        gap: 58px;
+        align-items: center;
+      }
+      .label img {
+        display: block;
+        width: 100%;
+        border-radius: 14px;
+      }
+      .label h2 {
+        margin: 10px 0 16px;
+        font:
+          500 clamp(2rem, 3.5vw, 3.5rem) / 1 "Playfair Display",
+          serif;
+        letter-spacing: -0.06em;
+      }
+      .label p {
+        max-width: 590px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+      .warning {
+        margin-top: 18px;
+        padding: 17px 19px;
+        border-left: 3px solid var(--gold);
+        background: #fff;
+        color: #594f52;
+        font-size: 0.82rem;
+        line-height: 1.65;
+      }
+      .warning b {
+        color: var(--berry);
+      }
+      .english {
+        padding: 82px 0;
+      }
+      .english h2 {
+        font:
+          500 clamp(2rem, 3.5vw, 3.4rem) / 1 "Playfair Display",
+          serif;
+        letter-spacing: -0.06em;
+      }
+      .english p {
+        max-width: 740px;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+      .english-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        margin-top: 28px;
+      }
+      .english-grid div {
+        padding: 16px;
+        border-top: 1px solid #251b23;
+      }
+      .english-grid b {
+        display: block;
+        margin-bottom: 7px;
+        font-size: 0.95rem;
+      }
+      .english-grid span {
+        color: var(--muted);
+        font-size: 0.78rem;
+        line-height: 1.55;
+      }
+      footer {
+        padding: 28px 0;
+        border-top: 1px solid var(--line);
+        color: #7a7074;
+        font: 500 0.68rem "DM Mono";
+        display: flex;
+        justify-content: space-between;
+      }
+      @media (max-width: 900px) {
+        .ingredients,
+        .english-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 720px) {
+        .wrap {
+          width: min(100% - 32px, 1170px);
+        }
+        header {
+          height: 70px;
+        }
+        .logo {
+          width: 99px;
+        }
+        nav a:not(.back) {
+          display: none;
+        }
+        .hero {
+          padding: 67px 0 55px;
+        }
+        .hero:after {
+          width: 100%;
+          right: -43%;
+          top: -15%;
+        }
+        .intro,
+        .label-grid {
+          grid-template-columns: 1fr;
+          gap: 25px;
+          padding: 58px 0 28px;
+        }
+        .ingredients {
+          grid-template-columns: 1fr 1fr;
+          padding-bottom: 62px;
+        }
+        .ingredient {
+          min-height: 270px;
+          padding: 16px;
+        }
+        .ingredient:last-child {
+          grid-column: span 2;
+        }
+        .label {
+          padding: 59px 0;
+        }
+        .label img {
+          width: 100%;
+          max-height: 220px;
+          object-fit: cover;
+          object-position: center;
+        }
+        .english {
+          padding: 60px 0;
+        }
+        .english-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .english-grid div:last-child {
+          grid-column: span 2;
+        }
+        footer {
+          flex-direction: column;
+          gap: 12px;
+        }
+      }
+    </style>
+    <style>
+      .hero {
+        background: #f4f0ea;
+        color: #251b23;
+      }
+      .hero-media {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            90deg,
+            rgba(252, 250, 245, 0.98) 0%,
+            rgba(252, 250, 245, 0.9) 35%,
+            rgba(252, 250, 245, 0.12) 76%
+          ),
+          url("black-cumin-molecule-hero.png") center/cover no-repeat;
+        z-index: 0;
+      }
+      .hero:after {
+        display: none;
+      }
+      .hero .wrap {
+        z-index: 2;
+      }
+      .hero .eyebrow {
+        color: #85103f;
+      }
+      .hero h1 {
+        color: #251b23;
+      }
+      .hero p {
+        color: #514950;
+      }
+      @media (max-width: 720px) {
+        .hero-media {
+          background:
+            linear-gradient(
+              180deg,
+              rgba(252, 250, 245, 0.15),
+              rgba(252, 250, 245, 0.96) 80%
+            ),
+            url("black-cumin-molecule-hero.png") 68% center/cover no-repeat;
+        }
+      }
+    </style>
+    <style>
+      .hero h1,
+      .intro h2,
+      .label h2,
+      .english h2 {
+        font-family: "Noto Sans TC", sans-serif !important;
+        font-weight: 600 !important;
+        letter-spacing: -0.015em !important;
+        line-height: 1.12 !important;
+      }
+      nav,
+      .back,
+      .ingredient h3 {
+        font-family: "Noto Sans HK", sans-serif;
+      }
+    </style>
+    <style>
+      .ingredient {
+        min-height: 385px !important;
+        padding: 0 !important;
+        overflow: hidden;
+        background: #fffdf9;
+      }
+      .ingredient:before {
+        content: "";
+        display: block;
+        flex: 0 0 125px;
+        background-color: #fffdf9;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        border-bottom: 1px solid #f0ebe3;
+      }
+      .ingredient:nth-child(1):before {
+        background-image: url("ingredient-studio-v2-black-cumin.png");
+      }
+      .ingredient:nth-child(2):before {
+        background-image: url("ingredient-studio-v2-black-raspberry.png");
+      }
+      .ingredient:nth-child(3):before {
+        background-image: url("ingredient-studio-v2-grape-seed.png");
+      }
+      .ingredient:nth-child(4):before {
+        background-image: url("ingredient-studio-v2-d-ribose.png");
+      }
+      .ingredient:nth-child(5):before {
+        background-image: url("ingredient-studio-v2-resveratrol.png");
+      }
+      .number {
+        margin: 16px 18px 0 !important;
+        white-space: nowrap;
+      }
+      .ingredient h3 {
+        margin: 18px 18px 6px !important;
+      }
+      .latin {
+        margin: 0 18px !important;
+      }
+      .ingredient p {
+        margin: 18px 18px 0 !important;
+      }
+      .ingredient a {
+        margin: auto 18px 20px !important;
+      }
+      @media (max-width: 720px) {
+        .ingredient {
+          min-height: 350px !important;
+        }
+        .ingredient:before {
+          flex-basis: 105px;
+        }
+        .number {
+          margin: 14px 15px 0 !important;
+        }
+        .ingredient h3 {
+          margin: 15px 15px 5px !important;
+        }
+        .latin,
+        .ingredient p,
+        .ingredient a {
+          margin-left: 15px !important;
+          margin-right: 15px !important;
+        }
+      }
+    </style>
+    <style>
+      @media (max-width: 720px) {
+        .wrap {
+          width: min(100% - 52px, 1170px) !important;
+        }
+      }
+    </style>
+  </head>
+  <body data-page="ingredients">
+    <div class="notice"><b>ON ORIGINAL NUTRITION</b>　LIFE · 成分研究</div>
+    <header class="wrap">
+      <a class="logo" href="index.html"
+        ><img src="on-logo-transparent.png" alt="ON Original Nutrition"
+      /></a>
+      <nav>
+        <a href="index.html#products">產品系列</a
+        ><a href="#ingredients">成分研究</a><a href="quality.html">認證</a
+        ><a href="en.html">EN</a
+        ><a class="back" href="index.html">返回首頁　←</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div
+          class="hero-media"
+          role="img"
+          aria-label="黑孜然籽、莓果及葡萄籽的自然靜物"
+        ></div>
+        <div class="wrap">
+          <div class="eyebrow">LIFE · 依據包裝資料整理</div>
+          <h1>把標籤上的成分，<br />講得清楚一點。</h1>
+          <p>
+            從產品包裝所列的 3.5g
+            專有複合配方出發，整理每種成分的基本來源、科學分類與公開研究背景。
+          </p>
+        </div>
+      </section>
+      <section class="wrap intro">
+        <div>
+          <div class="eyebrow" style="color: #85103f">從包裝資料開始了解</div>
+          <h2>認識配方，<br />先由事實開始。</h2>
+        </div>
+        <div>
+          <p>
+            包裝列出黑孜然籽、黑覆盆子籽、葡萄籽、D-核糖及反式白藜蘆醇，合計為
+            3.5g
+            專有複合配方。由於各成分劑量並未公開，本頁只呈現可核對的來源與一般科學資訊。
+          </p>
+          <div class="fact">
+            <b>閱讀原則：</b
+            >「成分被研究」不等於「產品具有醫療效果」。本頁不以成分研究推論 Life
+            對任何疾病的診斷、治療或預防作用。
+          </div>
+        </div>
+      </section>
+      <section class="wrap ingredients" id="ingredients">
+        <article class="ingredient">
+          <span class="number">01 / SEED</span>
+          <h3>黑孜然籽</h3>
+          <span class="latin">Nigella sativa</span>
+          <p>
+            常見的植物種子，亦見於飲食及草本傳統。公開文獻常討論其中的
+            thymoquinone 等天然化合物。
+          </p>
+          <a
+            href="https://pubmed.ncbi.nlm.nih.gov/34073784/"
+            target="_blank"
+            rel="noreferrer"
+            >閱讀研究 ↗</a
+          >
+        </article>
+        <article class="ingredient">
+          <span class="number">02 / BERRY SEED</span>
+          <h3>黑覆盆子籽</h3>
+          <span class="latin">Rubus occidentalis</span>
+          <p>
+            種子油的化學分析常見多元不飽和脂肪酸、tocopherols／tocols
+            及多酚類化合物。
+          </p>
+          <a
+            href="https://pubmed.ncbi.nlm.nih.gov/40074183/"
+            target="_blank"
+            rel="noreferrer"
+            >閱讀研究 ↗</a
+          >
+        </article>
+        <article class="ingredient">
+          <span class="number">03 / GRAPE SEED</span>
+          <h3>葡萄籽</h3>
+          <span class="latin">Vitis vinifera</span>
+          <p>
+            葡萄籽是植物多酚的來源之一；原花青素是其中常見、被研究的化合物組別。
+          </p>
+          <a
+            href="https://www.nccih.nih.gov/health/grape-seed-extract"
+            target="_blank"
+            rel="noreferrer"
+            >閱讀資料 ↗</a
+          >
+        </article>
+        <article class="ingredient">
+          <span class="number">04 / CARBOHYDRATE</span>
+          <h3>D-核糖</h3>
+          <span class="latin">D-ribose</span>
+          <p>一種五碳糖，與核苷酸相關的生物化學途徑及細胞能量代謝研究有關。</p>
+          <a
+            href="https://pubmed.ncbi.nlm.nih.gov/29780691/"
+            target="_blank"
+            rel="noreferrer"
+            >閱讀研究 ↗</a
+          >
+        </article>
+        <article class="ingredient">
+          <span class="number">05 / POLYPHENOL</span>
+          <h3>反式白藜蘆醇</h3>
+          <span class="latin">trans-resveratrol</span>
+          <p>
+            植物來源的 stilbenoid 多酚；「trans」指白藜蘆醇常見的一種異構形式。
+          </p>
+          <a
+            href="https://pubchem.ncbi.nlm.nih.gov/compound/resveratrol"
+            target="_blank"
+            rel="noreferrer"
+            >閱讀資料 ↗</a
+          >
+        </article>
+      </section>
+      <section class="label" id="label-info">
+        <div class="wrap label-grid">
+          <img src="life-label.jpeg" alt="ON Life 產品標籤及食用方法" />
+          <div>
+            <div class="eyebrow" style="color: #85103f">包裝資料核對</div>
+            <h2>資料與包裝對照。</h2>
+            <p>
+              Life 每包為 2 fl
+              oz（60ml）。標籤建議使用前搖勻、撕開包裝後直接飲用，每日 1–2
+              包。其他成分包括純淨水、蔗糖、木糖醇、天然香料、檸檬酸、黃原膠及
+              L-乳酸。
+            </p>
+            <div class="warning">
+              <b>重要提示：</b
+              >請以香港本地版本產品標籤為準。如有特別健康情況、懷孕、正在服用藥物或對成分敏感，食用前請諮詢醫生或專業人士。
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap">
+      <span>© 2026 ON ORIGINAL NUTRITION</span
+      ><span
+        ><a href="contact.html">聯絡我們</a>　·　<a href="legal.html"
+          >免責聲明及個人資料收集聲明</a
+        ></span
+      ><a href="#top">返回頁頂 ↑</a>
+    </footer>
+    <script src="site-nav.js"></script>
+  </body>
+</html>

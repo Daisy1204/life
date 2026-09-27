@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Certification｜ON Original Nutrition</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="site-nav.css" />
+    <style>
+      :root {
+        --p: #3f174d;
+        --b: #85103f;
+        --c: #fcfaf5;
+        --l: #ddd5d9;
+        --m: #655c62;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--c);
+        color: #251b23;
+        font-family: "Source Sans 3", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(1120px, calc(100% - 64px));
+        margin: auto;
+      }
+      .notice {
+        padding: 10px;
+        background: var(--p);
+        color: #fff;
+        text-align: center;
+        font: 500 0.69rem "DM Mono";
+      }
+      .notice b {
+        color: #dfcf68;
+      }
+      header {
+        height: 85px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .logo {
+        width: 122px;
+      }
+      .logo img {
+        width: 100%;
+        display: block;
+      }
+      nav {
+        display: flex;
+        gap: 23px;
+        align-items: center;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+      .lang {
+        border-bottom: 1px solid currentColor;
+        font: 0.7rem "DM Mono";
+      }
+      .back {
+        padding: 10px 16px;
+        border: 1px solid var(--p);
+        border-radius: 99px;
+      }
+      .hero {
+        padding: 90px 0 78px;
+        background: linear-gradient(124deg, #25102f, #611d55);
+        color: #fff;
+      }
+      .eyebrow {
+        color: #dfcf68;
+        font: 500 0.7rem "DM Mono";
+        letter-spacing: 0.12em;
+      }
+      .hero h1,
+      .intro h2,
+      .evidence h2 {
+        margin: 16px 0;
+        font:
+          600 clamp(2.8rem, 5.8vw, 5.6rem) / 1.1 "Source Serif 4",
+          serif;
+        letter-spacing: -0.04em;
+      }
+      .hero p {
+        max-width: 680px;
+        color: #ecdfeb;
+        line-height: 1.8;
+      }
+      .intro {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 55px;
+        padding: 74px 0 33px;
+      }
+      .intro h2,
+      .evidence h2 {
+        font-size: clamp(2rem, 3.7vw, 3.8rem);
+      }
+      .intro p,
+      .standard p,
+      .evidence p {
+        color: var(--m);
+        line-height: 1.78;
+      }
+      .note {
+        padding: 18px;
+        border-left: 3px solid #d7ad35;
+        background: #f7f0df;
+        color: #564b42;
+        line-height: 1.7;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding-bottom: 78px;
+      }
+      .card {
+        min-height: 252px;
+        padding: 27px;
+        border: 1px solid var(--l);
+        border-radius: 20px;
+        background: #fff;
+      }
+      .card b {
+        color: var(--b);
+        font: 0.68rem "DM Mono";
+        letter-spacing: 0.09em;
+      }
+      .card h3 {
+        margin: 26px 0 9px;
+        font-size: 1.3rem;
+      }
+      .card p {
+        margin: 0;
+      }
+      .evidence {
+        padding: 72px 0;
+        background: #f1ebf1;
+      }
+      .evidence-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 14px;
+      }
+      .evidence-grid div {
+        padding: 22px;
+        background: #fff;
+        border-radius: 18px;
+      }
+      .evidence-grid h3 {
+        margin: 15px 0 9px;
+      }
+      .sources {
+        padding: 74px 0;
+      }
+      .sources a {
+        display: block;
+        padding: 18px 0;
+        border-top: 1px solid #251b23;
+        color: #3f174d;
+        font-weight: 700;
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 28px 0;
+        border-top: 1px solid var(--l);
+        color: #7b7175;
+        font: 500 0.68rem "DM Mono";
+      }
+      @media (max-width: 720px) {
+        .wrap {
+          width: min(100% - 52px, 1120px);
+        }
+        header {
+          height: 70px;
+        }
+        .logo {
+          width: 99px;
+        }
+        nav a:not(.back):not(.lang) {
+          display: none;
+        }
+        .hero {
+          padding: 60px 0;
+        }
+        .intro,
+        .grid,
+        .evidence-grid {
+          display: grid;
+          grid-template-columns: 1fr;
+          gap: 20px;
+        }
+        .intro {
+          padding: 52px 0 30px;
+        }
+        .grid {
+          padding-bottom: 62px;
+        }
+        .evidence {
+          padding: 58px 0;
+        }
+        .sources {
+          padding: 58px 0;
+        }
+        footer {
+          flex-direction: column;
+        }
+      }
+    </style>
+    <style>
+      .label-visual {
+        margin: 22px 0 0;
+        overflow: hidden;
+        border: 1px solid var(--l);
+        border-radius: 16px;
+        background: #fff;
+      }
+      .label-visual img {
+        display: block;
+        width: 100%;
+        height: 214px;
+        object-fit: cover;
+        object-position: 48% 37%;
+      }
+      .label-visual figcaption {
+        padding: 10px 13px;
+        color: #675f63;
+        font-size: 0.72rem;
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body data-page="quality">
+    <div class="notice">
+      <b>ON ORIGINAL NUTRITION</b>　CERTIFICATION &amp; QUALITY
+    </div>
+    <header class="wrap">
+      <a class="logo" href="en.html"
+        ><img src="on-logo-transparent.png" alt="ON Original Nutrition"
+      /></a>
+      <nav>
+        <a href="en-shop.html">Shop</a><a href="en-contact.html">Contact</a
+        ><a class="lang" href="index.html">繁中</a
+        ><a class="back" href="en.html">Home ←</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero">
+        <div class="wrap">
+          <div class="eyebrow">CERTIFICATION / QUALITY</div>
+          <h1>Quality needs<br />evidence.</h1>
+          <p>
+            We distinguish packaging claims from documentation that can be
+            verified. A badge should say who issued it, what it covers and when
+            it is valid.
+          </p>
+        </div>
+      </section>
+      <section class="wrap intro">
+        <div>
+          <div class="eyebrow" style="color: #85103f">
+            READING QUALITY MARKS
+          </div>
+          <h2>Look beyond<br />the icon.</h2>
+        </div>
+        <div>
+          <p>
+            Current packaging imagery includes GMP, third-party testing,
+            natural-formula and FDA-facility references. Until valid
+            certificates or reports are supplied, these are not described as
+            independently verified product certifications.
+          </p>
+          <div class="note">
+            <b>Important:</b> FDA does not approve dietary supplements or issue
+            GMP compliance certificates for supplement facilities. Facility
+            registration is not FDA approval or certification.
+          </div>
+          <figure class="label-visual">
+            <img
+              src="life-label.jpeg"
+              alt="ON Life package nutrition, ingredients and directions label"
+            />
+            <figcaption>
+              Package-label preview: refer to the physical Hong Kong label
+              before purchase or use.
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+      <section class="wrap grid">
+        <article class="card">
+          <b>01 / GMP</b>
+          <h3>Good manufacturing practices</h3>
+          <p>
+            GMP is a manufacturing and quality-management framework. It is not,
+            by itself, proof that every production batch has been certified.
+          </p>
+        </article>
+        <article class="card">
+          <b>02 / INDEPENDENT TESTING</b>
+          <h3>Third-party testing</h3>
+          <p>
+            A meaningful claim should identify the independent laboratory,
+            batch, test date, methods and tested items.
+          </p>
+        </article>
+        <article class="card">
+          <b>03 / NATURAL FORMULA</b>
+          <h3>A formulation description</h3>
+          <p>
+            “Natural” or “plant-inspired” is not a certification and does not
+            automatically mean organic, non-GMO or free from all other
+            ingredients.
+          </p>
+        </article>
+        <article class="card">
+          <b>04 / FDA WORDING</b>
+          <h3>Use accurate wording</h3>
+          <p>
+            Claims should not say “FDA-certified facility”. Any registration
+            wording must stay within the evidence supplied.
+          </p>
+        </article>
+      </section>
+      <section class="evidence">
+        <div class="wrap">
+          <div class="eyebrow" style="color: #85103f">EVIDENCE WE REQUEST</div>
+          <h2>Not just badges —<br />their basis.</h2>
+          <div class="evidence-grid">
+            <div>
+              <b>MANUFACTURING</b>
+              <h3>Valid GMP certificate</h3>
+              <p>Issuer, facility address, scope, standard and expiry date.</p>
+            </div>
+            <div>
+              <b>TESTING</b>
+              <h3>Batch report</h3>
+              <p>
+                Batch number, lab, method, tests, specifications and results.
+              </p>
+            </div>
+            <div>
+              <b>LOCAL LABEL</b>
+              <h3>Hong Kong version</h3>
+              <p>
+                Ingredients, directions, warnings and claims matching the local
+                product label.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wrap sources">
+        <div class="eyebrow" style="color: #85103f">OFFICIAL READING</div>
+        <a
+          href="https://www.fda.gov/food/information-consumers-using-dietary-supplements/questions-and-answers-dietary-supplements"
+          target="_blank"
+          rel="noreferrer"
+          >FDA: dietary supplement questions and answers ↗</a
+        ><a
+          href="https://www.nsf.org/knowledge-library/what-is-third-party-certification"
+          target="_blank"
+          rel="noreferrer"
+          >NSF: what third-party certification means ↗</a
+        >
+      </section>
+    </main>
+    <footer class="wrap">
+      <span>© 2026 ON ORIGINAL NUTRITION</span
+      ><a href="en-contact.html">CONTACT</a
+      ><a href="en-legal.html">DISCLAIMER &amp; PRIVACY</a>
+    </footer>
+    <script src="site-nav.js"></script>
+  </body>
+</html>

@@ -1,86 +1,1682 @@
 <!doctype html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-HK">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta
       name="description"
-      content="ON Original Nutrition — A Seed with Purpose. Scientific nutrition, considered from the source."
+      content="ON Original Nutrition 香港｜Flow 及 Life 日常營養補充品。"
     />
-    <title>life — ON Original Nutrition</title>
+    <title>ON Original Nutrition 香港</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&amp;family=Noto+Sans+TC:wght@300;400;500&amp;family=Newsreader:opsz,wght@6..72,300;6..72,400&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+HK:wght@400;500;600;700&family=Noto+Sans+TC:wght@700;900&family=Noto+Serif+TC:wght@500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="site-nav.css" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='18' fill='%235d164b'/%3E%3Ccircle cx='32' cy='32' r='17' fill='none' stroke='%23d8be55' stroke-width='7'/%3E%3Cpath d='M34 14c12 9 14 22 3 34 2-12-2-18-11-24 1-4 4-8 8-10Z' fill='%23fff'/%3E%3C/svg%3E"
+    />
+    <style>
+      :root {
+        --ink: #251b23;
+        --plum: #3f174d;
+        --berry: #85103f;
+        --lilac: #eee8f1;
+        --cream: #fcfaf5;
+        --gold: #d7ad35;
+        --green: #54702e;
+        --line: #ddd5d9;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        margin: 0;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: "Noto Sans HK", sans-serif;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      .wrap {
+        width: min(1200px, calc(100% - 48px));
+        margin: auto;
+      }
+      .notice {
+        padding: 10px 20px;
+        background: var(--plum);
+        color: #fff;
+        text-align: center;
+        font: 500 0.72rem "DM Mono";
+        letter-spacing: 0.08em;
+      }
+      .notice b {
+        color: #dfcf68;
+      }
+      header {
+        height: 85px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        display: block;
+        width: 122px;
+        line-height: 0;
+      }
+      .logo img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      nav {
+        display: flex;
+        align-items: center;
+        gap: 22px;
+        font-size: 0.86rem;
+        font-weight: 600;
+      }
+      nav a:hover {
+        color: var(--berry);
+      }
+      .navcta {
+        padding: 10px 16px;
+        border: 1px solid var(--plum);
+        border-radius: 99px;
+      }
+      .lang {
+        border: 0;
+        border-bottom: 1px solid var(--ink);
+        padding: 3px 0;
+        background: transparent;
+        color: var(--ink);
+        font: 500 0.7rem "DM Mono";
+        cursor: pointer;
+      }
+      .hero {
+        overflow: hidden;
+        position: relative;
+        background: #211328;
+        border-radius: 28px;
+        min-height: 530px;
+        color: #fff;
+      }
+      .hero-copy {
+        position: relative;
+        width: calc(49% + 48px);
+        margin-left: -48px;
+        padding: 68px 48px 65px;
+        z-index: 2;
+        background: linear-gradient(
+          90deg,
+          rgba(24, 10, 30, 0.9),
+          rgba(24, 10, 30, 0.79) 78%,
+          rgba(24, 10, 30, 0)
+        );
+        border-left: 2px solid #dfcf68;
+        backdrop-filter: blur(3px);
+      }
+      .eyebrow {
+        color: var(--berry);
+        font: 500 0.72rem "DM Mono";
+        letter-spacing: 0.13em;
+      }
+      .hero .eyebrow {
+        color: #e1cf68;
+        text-shadow: 0 1px 12px rgba(0, 0, 0, 0.7);
+      }
+      .hero h1 {
+        margin: 15px 0 17px;
+        font:
+          500 clamp(3.1rem, 6.4vw, 6.8rem) / 0.95 "Playfair Display",
+          serif;
+        letter-spacing: -0.075em;
+        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.85);
+      }
+      .hero h1 em {
+        color: #dfcf68;
+      }
+      .hero p {
+        max-width: 410px;
+        color: #fff;
+        line-height: 1.8;
+        font-size: 1.04rem;
+        text-shadow: 0 2px 12px rgba(0, 0, 0, 0.9);
+      }
+      .button {
+        display: inline-flex;
+        margin-top: 20px;
+        padding: 14px 22px;
+        border-radius: 99px;
+        background: #fff;
+        color: var(--plum);
+        font-size: 0.9rem;
+        font-weight: 700;
+        transition: 0.2s;
+      }
+      .button:hover {
+        background: #e1cf68;
+        transform: translateY(-2px);
+      }
+      .hero-image {
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .hero-image:before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          90deg,
+          rgba(20, 8, 28, 0.98) 0%,
+          rgba(20, 8, 28, 0.9) 38%,
+          rgba(20, 8, 28, 0.2) 75%
+        );
+        z-index: 1;
+      }
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+      .trust {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        padding: 22px 0;
+        border-bottom: 1px solid var(--line);
+        text-align: center;
+      }
+      .trust div {
+        padding: 8px;
+        border-right: 1px solid var(--line);
+        font-size: 0.75rem;
+        line-height: 1.5;
+      }
+      .trust div:last-child {
+        border: 0;
+      }
+      .trust strong {
+        display: block;
+        color: var(--plum);
+        font: 500 0.75rem "DM Mono";
+        letter-spacing: 0.05em;
+      }
+      .products {
+        padding: 100px 0;
+      }
+      .heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: end;
+        margin-bottom: 32px;
+      }
+      .heading h2 {
+        margin: 9px 0 0;
+        font:
+          500 clamp(2.4rem, 4vw, 4.2rem) / 1 "Playfair Display",
+          serif;
+        letter-spacing: -0.06em;
+      }
+      .heading p {
+        max-width: 300px;
+        margin: 0;
+        color: #635b60;
+        font-size: 0.93rem;
+        line-height: 1.65;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 19px;
+      }
+      .card {
+        border-radius: 21px;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid var(--line);
+        display: flex;
+        flex-direction: column;
+      }
+      .visual {
+        height: 305px;
+        overflow: hidden;
+        position: relative;
+      }
+      .visual img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.45s;
+      }
+      .card:hover .visual img {
+        transform: scale(1.035);
+      }
+      .flow .visual img {
+        object-position: center;
+      }
+      .life .visual img {
+        object-position: center 66%;
+      }
+      .label {
+        position: absolute;
+        top: 17px;
+        left: 17px;
+        padding: 7px 10px;
+        background: #fff;
+        border-radius: 99px;
+        color: var(--plum);
+        font: 500 0.68rem "DM Mono";
+        letter-spacing: 0.08em;
+      }
+      .copy {
+        padding: 25px 26px 27px;
+      }
+      .copy h3 {
+        margin: 0;
+        font:
+          600 2.3rem/0.9 "Playfair Display",
+          serif;
+        letter-spacing: -0.06em;
+      }
+      .copy h3 span {
+        display: block;
+        margin-top: 10px;
+        font: 500 0.86rem "Noto Sans HK";
+        letter-spacing: 0;
+      }
+      .copy p {
+        min-height: 48px;
+        margin: 16px 0;
+        color: #625b60;
+        font-size: 0.91rem;
+        line-height: 1.65;
+      }
+      .textlink {
+        color: var(--berry);
+        font-size: 0.88rem;
+        font-weight: 700;
+        border-bottom: 1px solid currentColor;
+        padding-bottom: 3px;
+      }
+      .life-detail {
+        margin-top: 19px;
+        padding: 24px;
+        background: #f1ecf4;
+        border-radius: 20px;
+        display: grid;
+        grid-template-columns: 170px 1fr;
+        gap: 31px;
+        align-items: center;
+      }
+      .life-detail img {
+        display: block;
+        width: 100%;
+        max-height: 220px;
+        object-fit: cover;
+        object-position: 59% center;
+        border-radius: 11px;
+      }
+      .life-detail h3 {
+        margin: 0 0 8px;
+        color: var(--plum);
+        font-size: 1.16rem;
+      }
+      .life-detail p {
+        margin: 7px 0;
+        color: #554c53;
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
+      .life-detail b {
+        color: var(--berry);
+      }
+      .life-usage {
+        margin-top: 20px;
+        padding: 30px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: #fffdf9;
+      }
+      .usage-heading {
+        display: flex;
+        justify-content: space-between;
+        gap: 28px;
+        align-items: end;
+        margin-bottom: 24px;
+      }
+      .usage-heading h3 {
+        margin: 7px 0 0;
+        color: var(--plum);
+        font:
+          600 clamp(1.7rem, 3vw, 2.5rem) / 1.12 "Noto Serif TC",
+          serif;
+      }
+      .usage-heading p {
+        max-width: 330px;
+        margin: 0;
+        color: #625b60;
+        font-size: 0.87rem;
+        line-height: 1.65;
+      }
+      .usage-visual {
+        margin: 0 0 12px;
+        overflow: hidden;
+        border: 1px solid #eadfe9;
+        border-radius: 16px;
+        background: #fff;
+      }
+      .usage-visual img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .life-usage-feature {
+        margin-top: 20px;
+        padding: 12px;
+      }
+      .life-usage-feature .usage-visual {
+        margin: 0;
+      }
+      .usage-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) 1.22fr;
+        gap: 10px;
+      }
+      .usage-step,
+      .portable-note {
+        min-height: 108px;
+        padding: 18px;
+        border-radius: 15px;
+        background: #f5f0f6;
+      }
+      .usage-icon {
+        display: none;
+      }
+      .usage-icon svg,
+      .portable-note svg {
+        width: 30px;
+        height: 30px;
+        fill: none;
+        stroke: currentColor;
+        stroke-width: 1.7;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      .usage-step b {
+        display: block;
+        color: var(--berry);
+        font: 500 0.64rem "DM Mono";
+        letter-spacing: 0.1em;
+      }
+      .usage-step strong {
+        display: block;
+        margin-top: 6px;
+        color: var(--plum);
+        font-size: 0.98rem;
+      }
+      .usage-step small {
+        display: block;
+        margin-top: 4px;
+        color: #665e63;
+        font-size: 0.77rem;
+        line-height: 1.55;
+      }
+      .portable-note {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        background: var(--plum);
+        color: #fff;
+      }
+      .portable-note svg {
+        flex: 0 0 auto;
+        width: 34px;
+        height: 34px;
+        color: var(--gold);
+      }
+      .portable-note strong {
+        display: block;
+        color: var(--gold);
+        font-size: 1rem;
+      }
+      .portable-note p {
+        margin: 5px 0 0;
+        color: #eadcea;
+        font-size: 0.78rem;
+        line-height: 1.55;
+      }
+      .story {
+        background: var(--plum);
+        color: #fff;
+        padding: 90px 0;
+      }
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 95px;
+      }
+      .story .eyebrow {
+        color: #e1cf68;
+      }
+      .story h2 {
+        margin: 13px 0 0;
+        font:
+          500 clamp(2.5rem, 4vw, 4.5rem) / 1 "Playfair Display",
+          serif;
+        letter-spacing: -0.06em;
+      }
+      .story p {
+        color: #e8dce8;
+        line-height: 1.75;
+      }
+      .steps {
+        border-top: 1px solid rgba(255, 255, 255, 0.35);
+      }
+      .step {
+        display: grid;
+        grid-template-columns: 53px 1fr;
+        gap: 10px;
+        padding: 19px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+      }
+      .step b {
+        color: #e1cf68;
+        font: 500 0.74rem "DM Mono";
+      }
+      .step strong {
+        display: block;
+        margin-bottom: 4px;
+        font-size: 0.95rem;
+      }
+      .step small {
+        color: #d7c4d6;
+        font-size: 0.82rem;
+      }
+      .faq {
+        padding: 90px 0;
+      }
+      .faq h2 {
+        font:
+          500 clamp(2.3rem, 4vw, 4.1rem) / 1 "Playfair Display",
+          serif;
+        letter-spacing: -0.06em;
+      }
+      .faq-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 29px;
+      }
+      .faq-grid article {
+        padding: 22px;
+        border-top: 1px solid var(--ink);
+      }
+      .faq-grid h3 {
+        font-size: 1rem;
+        margin: 0 0 8px;
+      }
+      .faq-grid p {
+        margin: 0;
+        color: #625b60;
+        font-size: 0.9rem;
+        line-height: 1.65;
+      }
+      .disclaimer {
+        padding: 23px 0;
+        background: #eee9e1;
+        color: #514a48;
+        font-size: 0.74rem;
+        line-height: 1.75;
+      }
+      .disclaimer b {
+        color: var(--berry);
+      }
+      footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px 0;
+        color: #796f72;
+        font: 500 0.68rem "DM Mono";
+        letter-spacing: 0.035em;
+      }
+      @media (max-width: 720px) {
+        .wrap {
+          width: min(100% - 32px, 1200px);
+        }
+        header {
+          height: 70px;
+        }
+        .logo {
+          width: 99px;
+        }
+        nav {
+          gap: 14px;
+        }
+        nav a:not(.navcta) {
+          display: none;
+        }
+        .hero {
+          min-height: 640px;
+          border-radius: 21px;
+        }
+        .hero-copy {
+          width: calc(100% + 32px);
+          min-height: 100%;
+          margin-left: -16px;
+          padding: 215px 32px 38px;
+          background: linear-gradient(
+            180deg,
+            rgba(20, 8, 28, 0.18),
+            rgba(20, 8, 28, 0.96) 65%
+          );
+          border-left: 0;
+          border-bottom: 2px solid #dfcf68;
+        }
+        .hero-image {
+          width: 100%;
+          height: 100%;
+          top: 0;
+          bottom: 0;
+        }
+        .hero-image:before {
+          background: linear-gradient(
+            180deg,
+            rgba(20, 8, 28, 0.34),
+            rgba(20, 8, 28, 0.94) 78%
+          );
+        }
+        .hero h1 {
+          font-size: 3.7rem;
+        }
+        .trust {
+          grid-template-columns: 1fr 1fr;
+        }
+        .trust div:nth-child(2) {
+          border-right: 0;
+        }
+        .trust div:nth-child(-n + 2) {
+          border-bottom: 1px solid var(--line);
+        }
+        .products,
+        .faq {
+          padding: 67px 0;
+        }
+        .heading,
+        .story-grid {
+          display: block;
+        }
+        .heading p {
+          margin-top: 17px;
+        }
+        .cards,
+        .faq-grid {
+          grid-template-columns: 1fr;
+        }
+        .life-detail {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .life-detail img {
+          height: 180px;
+          max-height: none;
+        }
+        .life-usage {
+          padding: 22px 18px;
+        }
+        .usage-heading {
+          display: block;
+        }
+        .usage-heading p {
+          margin-top: 10px;
+        }
+        .usage-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .usage-step,
+        .portable-note {
+          min-height: 118px;
+          padding: 15px;
+        }
+        .portable-note {
+          grid-column: span 2;
+        }
+        .story {
+          padding: 68px 0;
+        }
+        .story-grid > div + div {
+          margin-top: 38px;
+        }
+        .visual {
+          height: 270px;
+        }
+        footer {
+          gap: 13px;
+          align-items: flex-start;
+          flex-direction: column;
+        }
+      }
+    </style>
+    <style>
+      .ingredient-lab {
+        padding: 0 0 102px;
+      }
+      .ingredient-intro {
+        display: grid;
+        grid-template-columns: 1.08fr 0.92fr;
+        gap: 44px;
+        align-items: end;
+        padding: 54px 0 29px;
+        border-bottom: 1px solid var(--line);
+      }
+      .ingredient-intro h2 {
+        margin: 10px 0 0;
+        font:
+          500 clamp(2.25rem, 4vw, 4.1rem) / 1 "Playfair Display",
+          serif;
+        letter-spacing: -0.06em;
+      }
+      .ingredient-intro p {
+        margin: 0;
+        color: #625b60;
+        font-size: 0.93rem;
+        line-height: 1.7;
+      }
+      .ingredient-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 12px;
+        padding-top: 18px;
+      }
+      .ingredient {
+        min-height: 235px;
+        padding: 20px;
+        border: 1px solid var(--line);
+        border-radius: 17px;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+      }
+      .ingredient-index {
+        color: var(--berry);
+        font: 500 0.68rem "DM Mono";
+        letter-spacing: 0.08em;
+      }
+      .ingredient h3 {
+        margin: 32px 0 5px;
+        font:
+          600 1.08rem/1.2 "Noto Sans HK",
+          sans-serif;
+      }
+      .ingredient .latin {
+        color: var(--green);
+        font: italic 0.74rem "DM Mono";
+        line-height: 1.45;
+      }
+      .ingredient p {
+        margin-top: auto;
+        margin-bottom: 0;
+        color: #625b60;
+        font-size: 0.79rem;
+        line-height: 1.6;
+      }
+      .formula-note {
+        margin-top: 17px;
+        padding: 18px 20px;
+        background: #f5efe3;
+        border-left: 3px solid var(--gold);
+        color: #554b48;
+        font-size: 0.8rem;
+        line-height: 1.65;
+      }
+      .formula-note b {
+        color: var(--berry);
+      }
+      @media (max-width: 900px) {
+        .ingredient-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+      @media (max-width: 720px) {
+        .ingredient-lab {
+          padding-bottom: 68px;
+        }
+        .ingredient-intro {
+          grid-template-columns: 1fr;
+          gap: 16px;
+          padding-top: 35px;
+        }
+        .ingredient-grid {
+          grid-template-columns: 1fr 1fr;
+          gap: 10px;
+        }
+        .ingredient {
+          min-height: 210px;
+          padding: 16px;
+        }
+        .ingredient h3 {
+          margin-top: 24px;
+          font-size: 1rem;
+        }
+        .ingredient p {
+          font-size: 0.75rem;
+        }
+        .ingredient:last-child {
+          grid-column: span 2;
+        }
+      }
+    </style>
+    <style>
+      /* Clinical editorial typography: calm, highly legible and bilingual. */
+      .hero h1,
+      .heading h2,
+      .story h2,
+      .faq h2,
+      .ingredient-intro h2,
+      .copy h3 {
+        font-family: "Noto Sans TC", sans-serif !important;
+        font-weight: 600 !important;
+        letter-spacing: -0.015em !important;
+        line-height: 1.12 !important;
+      }
+      nav,
+      .button,
+      .navcta,
+      .textlink,
+      .copy h3 span,
+      .ingredient h3 {
+        font-family: "Noto Sans HK", sans-serif;
+      }
+      .copy h3 span {
+        letter-spacing: 0.035em !important;
+        line-height: 1.55 !important;
+      }
+    </style>
+    <style>
+      .ingredient {
+        min-height: 355px !important;
+        padding: 0 !important;
+        overflow: hidden;
+        background: #fffdf9;
+      }
+      .ingredient:before {
+        content: "";
+        display: block;
+        flex: 0 0 108px;
+        background-color: #fffdf9;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        border-bottom: 1px solid #f0ebe3;
+      }
+      .ingredient:nth-child(1):before {
+        background-image: url("ingredient-studio-v2-black-cumin.png");
+      }
+      .ingredient:nth-child(2):before {
+        background-image: url("ingredient-studio-v2-black-raspberry.png");
+      }
+      .ingredient:nth-child(3):before {
+        background-image: url("ingredient-studio-v2-grape-seed.png");
+      }
+      .ingredient:nth-child(4):before {
+        background-image: url("ingredient-studio-v2-d-ribose.png");
+      }
+      .ingredient:nth-child(5):before {
+        background-image: url("ingredient-studio-v2-resveratrol.png");
+      }
+      .ingredient-index {
+        margin: 15px 18px 0 !important;
+        white-space: nowrap;
+      }
+      .ingredient h3 {
+        margin: 17px 18px 5px !important;
+      }
+      .ingredient .latin {
+        margin: 0 18px !important;
+      }
+      .ingredient p {
+        margin: auto 18px 20px !important;
+      }
+      @media (max-width: 720px) {
+        .ingredient {
+          min-height: 330px !important;
+        }
+        .ingredient:before {
+          flex-basis: 92px;
+        }
+        .ingredient-index {
+          margin: 13px 15px 0 !important;
+        }
+        .ingredient h3 {
+          margin: 15px 15px 5px !important;
+        }
+        .ingredient .latin,
+        .ingredient p {
+          margin-left: 15px !important;
+          margin-right: 15px !important;
+        }
+      }
+    </style>
+    <style>
+      /* Calm, premium editorial treatment — no promotional outline or cartoon shadow. */
+      .hero h1.hero-campaign {
+        font-family: "Noto Sans TC", sans-serif !important;
+        font-weight: 600 !important;
+        font-size: clamp(2.65rem, 4.1vw, 4.2rem) !important;
+        line-height: 1.1 !important;
+        letter-spacing: -0.045em !important;
+        color: #fff !important;
+        text-shadow: 0 3px 20px rgba(0, 0, 0, 0.55);
+      }
+      .hero h1.hero-campaign em {
+        display: inline-block;
+        color: #dfcf68 !important;
+        font-style: normal;
+        transform: none;
+      }
+      @media (max-width: 720px) {
+        .wrap {
+          width: min(100% - 52px, 1200px) !important;
+        }
+        .hero-copy {
+          width: 100% !important;
+          margin-left: 0 !important;
+          padding: 188px 30px 44px !important;
+        }
+        .hero h1.hero-campaign {
+          font-size: clamp(1.45rem, 6vw, 2.75rem) !important;
+          line-height: 1.18 !important;
+          letter-spacing: -0.025em !important;
+        }
+        .hero-copy p {
+          max-width: 28ch;
+        }
+        .hero .eyebrow {
+          font-size: 0.64rem;
+          letter-spacing: 0.08em;
+        }
+        nav a.lang {
+          display: block !important;
+        }
+      }
+      /* Extra-narrow browser panes: preserve a readable composition instead of clipping the hero. */
+      @media (max-width: 260px) {
+        .notice {
+          padding-inline: 5px !important;
+          overflow: hidden;
+          white-space: nowrap;
+          font-size: 0.48rem !important;
+          letter-spacing: 0.025em !important;
+        }
+        .wrap {
+          width: calc(100% - 24px) !important;
+        }
+        header {
+          height: 62px !important;
+        }
+        .logo {
+          width: 50px !important;
+        }
+        nav {
+          gap: 7px !important;
+        }
+        nav a.lang {
+          font-size: 0.58rem !important;
+        }
+        .navcta {
+          padding: 7px 8px !important;
+          font-size: 0.67rem !important;
+        }
+        .hero {
+          min-height: 0 !important;
+          border-radius: 17px !important;
+        }
+        .hero-copy {
+          padding: 132px 16px 32px !important;
+        }
+        .hero h1.hero-campaign {
+          font-size: 1.35rem !important;
+          line-height: 1.2 !important;
+          letter-spacing: -0.02em !important;
+          overflow-wrap: anywhere;
+        }
+        .hero .eyebrow {
+          font-size: 0.52rem !important;
+          line-height: 1.5 !important;
+        }
+        .hero-copy p {
+          font-size: 0.77rem !important;
+          line-height: 1.7 !important;
+        }
+        .button {
+          padding: 11px 13px !important;
+          font-size: 0.68rem !important;
+        }
+        .site-bottom-nav {
+          width: calc(100vw - 12px) !important;
+          bottom: 6px !important;
+          padding: 4px 2px !important;
+          border-radius: 16px !important;
+        }
+        .site-bottom-nav svg {
+          width: 15px !important;
+          height: 15px !important;
+        }
+        body nav.site-bottom-nav a {
+          min-height: 47px !important;
+          gap: 2px !important;
+          font-size: 0.48rem !important;
+          line-height: 1 !important;
+        }
+      }
+    </style>
+    <style>
+      .life-pricing {
+        margin: 19px 0 3px;
+        padding: 15px 16px 13px;
+        border-radius: 14px;
+        background: #f4eef5;
+        border: 1px solid #e3d7e5;
+      }
+      .life-pricing strong {
+        display: block;
+        color: var(--plum);
+        font-size: 0.88rem;
+      }
+      .life-pricing span {
+        display: block;
+        margin-top: 3px;
+        color: #786d76;
+        font-size: 0.72rem;
+      }
+      .price-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 8px;
+        margin-top: 12px;
+      }
+      .price-tier {
+        padding: 9px 8px;
+        border-radius: 9px;
+        background: #fff;
+        color: #5d5059;
+        font-size: 0.72rem;
+        line-height: 1.42;
+      }
+      .price-tier b {
+        display: block;
+        color: var(--berry);
+        font-size: 0.88rem;
+      }
+      .price-tier.featured {
+        background: var(--plum);
+        color: #f0e9ef;
+      }
+      .price-tier.featured b {
+        color: #e1cf68;
+      }
+      .flow-pricing {
+        margin: 19px 0 3px;
+        padding: 15px 16px 13px;
+        border-radius: 14px;
+        background: #f4eef5;
+        border: 1px solid #e3d7e5;
+      }
+      .flow-pricing strong {
+        display: block;
+        color: var(--plum);
+        font-size: 0.88rem;
+      }
+      .flow-pricing span {
+        display: block;
+        margin-top: 3px;
+        color: #786d76;
+        font-size: 0.72rem;
+      }
+      .flow-pricing .price-grid {
+        grid-template-columns: 1fr;
+      }
+      .flow-pricing .price-tier {
+        padding: 12px 10px;
+      }
+      .flow-pricing .price-tier b {
+        font-size: 1rem;
+      }
+      .clear-price {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        margin-top: 19px;
+        padding: 24px 28px;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        background: linear-gradient(105deg, #f5f0f6, #fff);
+      }
+      .clear-price h3 {
+        margin: 5px 0 0;
+        color: var(--plum);
+        font:
+          600 2rem/1 "Noto Serif TC",
+          serif;
+      }
+      .clear-price strong {
+        color: var(--berry);
+        font-size: 1.75rem;
+      }
+      .clear-price strong small {
+        font-size: 0.78rem;
+        font-weight: 500;
+        color: #766a70;
+      }
+      @media (max-width: 720px) {
+        .life-pricing {
+          padding: 14px;
+        }
+        .price-grid {
+          gap: 7px;
+        }
+        .clear-price {
+          padding: 21px;
+        }
+        .clear-price h3 {
+          font-size: 1.7rem;
+        }
+      }
+    </style>
+    <style>
+      /* Desktop and tablet hero: inset copy from the card edge and cap display type. */
+      .hero-copy {
+        width: 58%;
+        margin-left: 0;
+        padding: 92px 64px 78px;
+      }
+      .hero h1.hero-campaign {
+        max-width: none;
+        font-size: clamp(2.65rem, 4.1vw, 4.2rem) !important;
+        line-height: 1.13 !important;
+      }
+      @media (min-width: 721px) and (max-width: 980px) {
+        .hero-copy {
+          width: 68%;
+          padding: 76px 54px 68px;
+        }
+        .hero h1.hero-campaign {
+          font-size: clamp(2.85rem, 6.1vw, 3.8rem) !important;
+        }
+        .hero {
+          min-height: 560px;
+        }
+      }
+    </style>
+    <style>
+      /* Subtle living-science motion for the hero visual. */
+      .hero-image {
+        overflow: hidden;
+        isolation: isolate;
+      }
+      .hero-image img {
+        transform: scale(1.06);
+        animation: science-drift 8s ease-in-out infinite alternate;
+        will-change: transform;
+      }
+      .hero-image:after {
+        content: "";
+        position: absolute;
+        inset: -7%;
+        z-index: 2;
+        pointer-events: none;
+        background:
+          radial-gradient(
+            circle at 74% 23%,
+            rgba(255, 244, 212, 0.78) 0 3px,
+            rgba(255, 244, 212, 0.18) 4px,
+            transparent 9px
+          ),
+          radial-gradient(
+            circle at 87% 47%,
+            rgba(231, 207, 108, 0.66) 0 4px,
+            rgba(231, 207, 108, 0.12) 5px,
+            transparent 12px
+          ),
+          radial-gradient(
+            circle at 65% 67%,
+            rgba(255, 255, 255, 0.52) 0 3px,
+            rgba(255, 255, 255, 0.12) 4px,
+            transparent 10px
+          );
+        filter: drop-shadow(0 0 9px rgba(255, 229, 145, 0.48));
+        animation: particle-float 5s ease-in-out infinite alternate;
+        will-change: transform;
+      }
+      .bio-orb {
+        position: absolute;
+        z-index: 3;
+        width: clamp(54px, 7vw, 112px);
+        aspect-ratio: 1;
+        border: 1px solid rgba(255, 241, 191, 0.72);
+        border-radius: 50%;
+        background: radial-gradient(
+          circle at 31% 26%,
+          rgba(255, 255, 255, 0.9),
+          rgba(240, 213, 133, 0.22) 18%,
+          rgba(97, 46, 116, 0.24) 47%,
+          rgba(22, 7, 33, 0.05) 71%
+        );
+        box-shadow:
+          inset 0 0 20px rgba(255, 242, 190, 0.38),
+          0 0 22px rgba(231, 203, 115, 0.28);
+        backdrop-filter: blur(1px);
+        animation: orb-float 4.2s ease-in-out infinite alternate;
+      }
+      .bio-orb:after {
+        content: "";
+        position: absolute;
+        inset: 12%;
+        border: 1px solid rgba(255, 236, 166, 0.65);
+        border-radius: 50%;
+        background: conic-gradient(
+          from 10deg,
+          transparent 0 18%,
+          rgba(255, 235, 169, 0.66) 26%,
+          transparent 38% 57%,
+          rgba(196, 156, 224, 0.5) 67%,
+          transparent 78%
+        );
+        animation: orb-spin 2.9s linear infinite;
+      }
+      .orb-one {
+        top: 17%;
+        right: 19%;
+        animation-delay: -0.6s;
+      }
+      .orb-two {
+        bottom: 16%;
+        right: 9%;
+        width: clamp(44px, 5.8vw, 88px);
+        animation-delay: -2s;
+      }
+      .orb-three {
+        top: 53%;
+        right: 39%;
+        width: clamp(33px, 4.2vw, 65px);
+        animation-delay: -1.1s;
+      }
+      .orb-two:after {
+        animation-duration: 2.2s;
+        animation-direction: reverse;
+      }
+      .orb-three:after {
+        animation-duration: 1.8s;
+      }
+      @keyframes science-drift {
+        0% {
+          transform: scale(1.06) translate3d(-0.8%, -0.5%, 0);
+        }
+        100% {
+          transform: scale(1.1) translate3d(0.8%, 0.9%, 0);
+        }
+      }
+      @keyframes particle-float {
+        0% {
+          transform: translate3d(-1%, 1%, 0) rotate(-1deg);
+        }
+        100% {
+          transform: translate3d(1.6%, -1.3%, 0) rotate(1deg);
+        }
+      }
+      @keyframes orb-float {
+        0% {
+          transform: translate3d(-4px, 5px, 0) scale(0.97);
+        }
+        100% {
+          transform: translate3d(5px, -7px, 0) scale(1.04);
+        }
+      }
+      @keyframes orb-spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .hero-image img,
+        .hero-image:after,
+        .bio-orb,
+        .bio-orb:after {
+          animation: none !important;
+        }
+      }
+    </style>
+    <style>
+      .hero-image img {
+        animation: none !important;
+        transform: none !important;
+      }
+      .hero-image:after,
+      .bio-orb {
+        display: none !important;
+      }
+      .hero.carousel {
+        min-height: 530px;
+      }
+      .carousel-track {
+        display: flex;
+        width: 200%;
+        height: 100%;
+        transition: transform 0.65s cubic-bezier(0.2, 0.72, 0.2, 1);
+        will-change: transform;
+      }
+      .hero-slide {
+        position: relative;
+        flex: 0 0 50%;
+        min-height: 530px;
+        overflow: hidden;
+      }
+      .campaign-slide {
+        display: grid;
+        place-items: center;
+        background: #d8c1de;
+      }
+      .campaign-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .carousel-dots {
+        position: absolute;
+        z-index: 6;
+        right: 24px;
+        bottom: 22px;
+        display: flex;
+        gap: 8px;
+      }
+      .carousel-dot {
+        width: 10px;
+        height: 10px;
+        padding: 0;
+        border: 1px solid rgba(255, 255, 255, 0.88);
+        border-radius: 99px;
+        background: transparent;
+        cursor: pointer;
+      }
+      .carousel-dot.is-active {
+        background: #fff;
+      }
+      @media (max-width: 720px) {
+        .hero.carousel,
+        .hero-slide {
+          min-height: 640px;
+        }
+        .campaign-slide img {
+          object-fit: contain;
+        }
+        .carousel-dots {
+          right: 18px;
+          bottom: 16px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .carousel-track {
+          transition: none;
+        }
+      }
+    </style>
   </head>
-  <body>
-    <main>
-      <section class="hero" aria-labelledby="hero-title">
-        <div class="grain" aria-hidden="true"></div>
-
-        <header class="site-header">
-          <a class="brand" href="#" aria-label="life by ON Original Nutrition — home">
-            <span class="brand-name">life</span>
-            <span class="brand-by">by ON</span>
-          </a>
-
-          <nav class="language-switcher" aria-label="Language selection">
-            <button class="language active" type="button" data-lang="zh" aria-pressed="true">繁中</button>
-            <span aria-hidden="true">/</span>
-            <button class="language" type="button" data-lang="en" aria-pressed="false">EN</button>
-          </nav>
-        </header>
-
-        <div class="hero-content">
-          <div class="edition-mark" aria-hidden="true">
-            <span>ORIGINAL NUTRITION</span>
-            <span>VOL. 01</span>
+  <body data-page="home">
+    <div class="notice">
+      <b>ON ORIGINAL NUTRITION</b>　日常營養，由一個好習慣開始
+    </div>
+    <header class="wrap">
+      <a class="logo" href="#top" aria-label="ON Original Nutrition 首頁"
+        ><img src="on-logo-transparent.png" alt="ON Original Nutrition"
+      /></a>
+      <nav>
+        <a href="#top">首頁</a><a href="#products">產品系列</a
+        ><a href="ingredients.html">成分研究</a><a href="quality.html">認證</a
+        ><a href="#story">品牌理念</a><a href="#faq">常見問題</a
+        ><a href="member.html">會員</a
+        ><a class="lang" href="en.html" lang="en" aria-label="前往英文版">EN</a
+        ><a class="navcta" href="contact.html">聯絡我們</a>
+      </nav>
+    </header>
+    <main id="top">
+      <section class="hero wrap">
+        <div class="hero-copy">
+          <div class="eyebrow">天然智慧，融入每天的照顧</div>
+          <h1 class="hero-campaign">一顆充滿使命的<br /><em>種子。</em></h1>
+          <p>
+            自然的智慧，為更明亮的明天。從種子的天然潛能出發，把科學思維帶進每一個簡單、可持續的日常營養習慣。
+          </p>
+          <a class="button" href="#products">探索兩款產品　→</a>
+        </div>
+        <div class="hero-image">
+          <img
+            src="science-hero.png"
+            alt="抽象的植物細胞、種子及分子連結科學視覺"
+          />
+        </div>
+      </section>
+      <section
+        class="wrap life-usage life-usage-feature"
+        aria-label="Life 三步使用方法"
+      >
+        <figure class="usage-visual">
+          <img
+            src="life-usage-steps-v3.png"
+            alt="Life 三步使用圖解：搖勻、從頂部白色撕口撕開包裝及直接飲用"
+          />
+        </figure>
+        <div class="usage-grid">
+          <article class="usage-step">
+            <b>01</b><strong>使用前搖勻</strong
+            ><small>讓內容物混合均勻。</small>
+          </article>
+          <article class="usage-step">
+            <b>02</b><strong>撕開頂部白色封條</strong
+            ><small>沿頂上白色位置撕開，毋須撕破紫色袋身。</small>
+          </article>
+          <article class="usage-step">
+            <b>03</b><strong>直接飲用</strong><small>開封後即可享用。</small>
+          </article>
+          <aside class="portable-note">
+            <div>
+              <strong>獨立條裝，輕便易攜</strong>
+              <p>一包一份量，按需要放進手袋、辦公室或旅行袋。</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+      <section class="wrap products" id="products">
+        <div class="heading">
+          <div>
+            <div class="eyebrow">兩款日常配方</div>
+            <h2>找到適合你的<br />每日一包。</h2>
           </div>
-
-          <div class="copy-block">
-            <p class="eyebrow" data-copy="eyebrow">從源頭，重新理解營養</p>
-            <h1 id="hero-title" data-copy="title">一顆充滿使命的種子</h1>
-            <p class="introduction" data-copy="intro">
-              一切始於一顆微小種子。以科學為方法，探索黑小茴香蘊藏的原生力量，讓每日營養回到純粹本質。
+          <p>從忙碌早晨到想好好照顧自己的時刻，兩款配方，兩種日常節奏。</p>
+        </div>
+        <div class="cards">
+          <article class="card life">
+            <div class="visual">
+              <span class="label">ON LIFE</span
+              ><img
+                src="life-natural-product.png"
+                alt="ON Life 皇牌種籽油包裝"
+              />
+            </div>
+            <div class="copy">
+              <h3>life<span>皇牌種籽油</span></h3>
+              <p>
+                包裝標示為抗氧化豐富種子配方；獨立包裝設計，適合放在家中、辦公室或隨身攜帶。
+              </p>
+              <div class="life-pricing" aria-label="Life 價格">
+                <strong>Life 訂購價格</strong
+                ><span>所有價格均以每盒計算（HK$）</span>
+                <div class="price-grid">
+                  <div class="price-tier"><b>HK$788</b>單盒</div>
+                  <div class="price-tier"><b>HK$768 / 盒</b>6 盒</div>
+                  <div class="price-tier featured"><b>HK$758 / 盒</b>12 盒</div>
+                  <div class="price-tier featured"><b>HK$748 / 盒</b>24 盒</div>
+                </div>
+              </div>
+              <a class="textlink" href="#life-info">查看產品資料　→</a>
+            </div>
+          </article>
+          <article class="card flow">
+            <div class="visual">
+              <span class="label">ON FLOW</span
+              ><img src="flow-product.png" alt="ON Flow 補充品及莓果甜菜飲品" />
+            </div>
+            <div class="copy">
+              <h3>flow<span>日常活力配方</span></h3>
+              <p>
+                以甜菜與莓果色彩啟發的日常營養補充品。輕鬆沖調，為生活留一個照顧自己的小空間。
+              </p>
+              <div class="flow-pricing" aria-label="Flow 價格">
+                <strong>Flow 訂購價格</strong
+                ><span>所有價格均以每包計算（HK$）</span>
+                <div class="price-grid">
+                  <div class="price-tier"><b>HK$560／包</b>單包</div>
+                </div>
+              </div>
+              <a class="textlink" href="#faq">查看產品資料　→</a>
+            </div>
+          </article>
+        </div>
+        <article class="life-detail" id="life-info">
+          <img src="life-label.jpeg" alt="ON Life 的成分及食用方法標籤" />
+          <div>
+            <div class="eyebrow">LIFE · 產品資料</div>
+            <h3>Life 產品資料</h3>
+            <p>
+              <b>包裝所列複合配方：</b
+              >黑孜然籽、黑覆盆子籽、葡萄籽、D-核糖及反式白藜蘆醇。
+            </p>
+            <p>
+              <b>建議食用方法：</b
+              >使用前搖勻，撕開包裝後直接飲用；包裝標示建議每日 1–2 包。
+            </p>
+            <p>
+              每包 2 fl oz（60
+              ml）。其他成分及完整營養資料請參閱產品包裝；本地售賣版本請以香港標籤為準。
             </p>
           </div>
-
-          <figure class="seed-visual" aria-labelledby="seed-caption">
-            <div class="orbital orbital-one" aria-hidden="true"></div>
-            <div class="orbital orbital-two" aria-hidden="true"></div>
-            <div class="image-placeholder">
-              <span class="placeholder-index">FIG. 01</span>
-              <span class="placeholder-label" data-copy="placeholder">黑小茴香種子<br />高解析真實影像預留位置</span>
-              <span class="placeholder-spec">NIGELLA SATIVA · MACRO / 4K</span>
+        </article>
+        <section class="life-usage" aria-labelledby="life-usage-title" hidden>
+          <div class="usage-heading">
+            <div>
+              <div class="eyebrow">LIFE · 簡單三步</div>
+              <h3 id="life-usage-title">三步享用，隨身照顧自己</h3>
             </div>
-            <figcaption id="seed-caption">
-              <span data-copy="caption">黑小茴香種子</span>
-              <span>Nigella sativa</span>
-            </figcaption>
-          </figure>
-        </div>
-
-        <footer class="hero-footer">
-          <div class="research-note">
-            <span class="note-number">01</span>
-            <p data-copy="note">源自植物的智慧<br />經由現代科學驗證</p>
+            <p>
+              每包獨立封裝，放入手袋、辦公室或旅行袋都方便；請依照產品包裝標示的建議份量食用。
+            </p>
           </div>
-          <a class="scroll-cue" href="#discover" aria-label="Scroll to discover more">
-            <span data-copy="discover">向下探索</span>
-            <svg viewBox="0 0 16 28" aria-hidden="true">
-              <path d="M8 1v24M2 19l6 6 6-6" />
-            </svg>
-          </a>
-          <p class="coordinates">22.3193° N<br />114.1694° E</p>
-        </footer>
+          <figure class="usage-visual">
+            <img
+              src="life-usage-steps-v3.png"
+              alt="Life 三步使用圖解：搖勻、從頂部白色撕口撕開包裝及直接飲用"
+            />
+          </figure>
+          <div class="usage-grid">
+            <article class="usage-step">
+              <div class="usage-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M18 13h12l2 23H16z" />
+                  <path
+                    d="M18 13 16 10m14 3 2-3M12 21a13 13 0 0 0 1 13m23-13a13 13 0 0 1-1 13"
+                  />
+                  <path d="m10 29 3 5 4-3m18 3 3-5-4-3" />
+                </svg>
+              </div>
+              <b>01</b><strong>使用前搖勻</strong
+              ><small>讓內容物混合均勻。</small>
+            </article>
+            <article class="usage-step">
+              <div class="usage-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M18 13h12l2 23H16z" />
+                  <path d="M18 13 16 10m14 3 2-3M17 20h14" />
+                  <path d="m30 17 6 6m0-6-6 6" />
+                </svg>
+              </div>
+              <b>02</b><strong>撕開包裝</strong><small>沿頂部撕開即可。</small>
+            </article>
+            <article class="usage-step">
+              <div class="usage-icon">
+                <svg viewBox="0 0 48 48" aria-hidden="true">
+                  <path d="M18 13h12l2 19H18z" />
+                  <path
+                    d="M18 13 16 10m14 3 2-3M31 18c4 1 6 4 6 7 0 4-3 7-7 7"
+                  />
+                  <path d="M36 32c2 1 3 3 3 5" />
+                </svg>
+              </div>
+              <b>03</b><strong>直接飲用</strong><small>開封後即可享用。</small>
+            </article>
+            <aside class="portable-note">
+              <svg viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="11" y="16" width="26" height="22" rx="3" />
+                <path d="M18 16v-3a6 6 0 0 1 12 0v3M18 26h12" />
+              </svg>
+              <div>
+                <strong>獨立條裝，輕便易攜</strong>
+                <p>一包一份量，按需要放進日常隨行用品。</p>
+              </div>
+            </aside>
+          </div>
+        </section>
       </section>
-
-      <div id="discover" class="scroll-space" aria-hidden="true"></div>
+      <section
+        class="wrap ingredient-lab"
+        id="science"
+        aria-labelledby="ingredient-title"
+      >
+        <div class="ingredient-intro">
+          <div>
+            <div class="eyebrow">LIFE · 成分研究</div>
+            <h2 id="ingredient-title">一包裡的<br />成分語言。</h2>
+          </div>
+          <p>
+            從種子來源到天然小分子，這是包裝所列的專有複合配方成分。每張卡說明成分的基本來源與科學分類，讓你看得明白，而非把研究資料化作醫療承諾。
+          </p>
+        </div>
+        <div class="ingredient-grid">
+          <article class="ingredient">
+            <span class="ingredient-index">01 / 種子</span>
+            <h3>黑孜然籽</h3>
+            <span class="latin">Nigella sativa</span>
+            <p>
+              一種常見於飲食及草本傳統的植物種子；研究經常討論其所含的百里醌等天然化合物。
+            </p>
+          </article>
+          <article class="ingredient">
+            <span class="ingredient-index">02 / 莓果籽</span>
+            <h3>黑覆盆子籽</h3>
+            <span class="latin">Rubus occidentalis</span>
+            <p>
+              莓果種子研究常見多元不飽和脂肪酸、維他命 E
+              相關成分及多酚類化合物。
+            </p>
+          </article>
+          <article class="ingredient">
+            <span class="ingredient-index">03 / 葡萄籽</span>
+            <h3>葡萄籽</h3>
+            <span class="latin">Vitis vinifera</span>
+            <p>葡萄籽是多酚的來源之一；其中常被研究的組別包括原花青素。</p>
+          </article>
+          <article class="ingredient">
+            <span class="ingredient-index">04 / 五碳糖</span>
+            <h3>D-核糖</h3>
+            <span class="latin">D-ribose</span>
+            <p>一種五碳糖，亦見於生物學的核苷酸與細胞能量代謝相關路徑。</p>
+          </article>
+          <article class="ingredient">
+            <span class="ingredient-index">05 / 多酚</span>
+            <h3>反式白藜蘆醇</h3>
+            <span class="latin">trans-resveratrol</span>
+            <p>一種植物來源的多酚；反式為白藜蘆醇其中一種常見異構形式。</p>
+          </article>
+        </div>
+        <div class="formula-note">
+          <b>配方透明度：</b>包裝列出專有複合配方總量為
+          3.5g，但沒有公開各單一成分的劑量。因此本頁只介紹成分基本資料，並不推論個別成分於本產品中的實際含量或效果。
+        </div>
+      </section>
+      <section class="story" id="story">
+        <div class="wrap story-grid">
+          <div>
+            <div class="eyebrow">一個簡單的日常習慣</div>
+            <h2>忙，都可以<br />好好照顧自己。</h2>
+            <p>
+              真正做得到的健康習慣，不應該太複雜。將一包營養補充品放進你的日程，讓每次沖調，成為回到自己的一刻。
+            </p>
+          </div>
+          <div class="steps">
+            <div class="step">
+              <b>01</b>
+              <div>
+                <strong>選擇今天的節奏</strong
+                ><small>Flow 或 Life，按你的日常需要選擇。</small>
+              </div>
+            </div>
+            <div class="step">
+              <b>02</b>
+              <div>
+                <strong>按包裝指示享用</strong
+                ><small>請依照產品標籤的建議食用方法及份量。</small>
+              </div>
+            </div>
+            <div class="step">
+              <b>03</b>
+              <div>
+                <strong>留住這個習慣</strong
+                ><small>讓一個簡單的動作，慢慢成為每日的照顧。</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="wrap faq" id="faq">
+        <div class="eyebrow">購買前先了解</div>
+        <h2>簡單講清楚。</h2>
+        <div class="faq-grid">
+          <article>
+            <h3>兩款產品有甚麼分別？</h3>
+            <p>
+              Flow 及 Life
+              是不同的日常營養補充品配方。實際成分、建議食用方法及營養資料，請以香港發售版本的包裝標籤為準。
+            </p>
+          </article>
+          <article>
+            <h3>產品在哪裡製造？</h3>
+            <p>
+              根據 Life
+              產品圖片資料，產品標示為美國製造；購買前請核對本地版本包裝及代理資料。
+            </p>
+          </article>
+          <article>
+            <h3>可以代替正餐嗎？</h3>
+            <p>
+              不可以。營養補充品並非正餐替代品，均衡飲食和健康生活習慣同樣重要。
+            </p>
+          </article>
+          <article>
+            <h3>有特別健康情況可以食用嗎？</h3>
+            <p>
+              如有特別健康情況、懷孕、正在服用藥物或對成分敏感，食用前請先諮詢醫生或專業人士。
+            </p>
+          </article>
+        </div>
+      </section>
     </main>
-
-    <script src="script.js"></script>
+    <section class="disclaimer">
+      <div class="wrap">
+        <b>重要提示：</b
+        >本產品為日常保健食品，並不供作診斷、治療或預防任何疾病之用。產品效果因人而異。請以產品包裝、香港本地標籤及專業人士意見為準。
+      </div>
+    </section>
+    <footer class="wrap">
+      <span>© 2026 ON ORIGINAL NUTRITION</span
+      ><span
+        ><a href="contact.html">聯絡我們</a>　·　<a href="legal.html"
+          >免責聲明及個人資料收集聲明</a
+        ></span
+      ><a href="#top">返回頁頂 ↑</a>
+    </footer>
+    <script src="site-nav.js"></script>
   </body>
 </html>
